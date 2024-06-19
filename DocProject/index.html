@@ -1,339 +1,475 @@
-<!doctype html>
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Docu Luipy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-<html lang="en">
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">JS Bot</a></li>
+							<li><a href="#two">CV Virtual</a></li>
+							<li><a href="#three">MC Server</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-    <title>Documentation Template</title>
-    <meta name="description" content="A simple HTML/CSS DocumentationTemplate">
-    <meta name="author" content="Carlos Yllobre">
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Bienvenido</h1>
+							 <p>Aquí podrás encontrar el índice de la documentación <!--<a href="http://html5up.net">HTML5 UP</a>--><br /> 
+							y un resumen de la misma.<!--<a href="http://html5up.net/license">Creative Commons</a>--></p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Vamos</a></li>
+							</ul>
+						</div>
+					</section>
 
-    <link rel="stylesheet" href="docstyles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
-    
-    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<div class="inner">
+						<h1>Bot para Minecraft con "Mineflayer"</h1>
+						<p>Para poder crear nuestro propio bot de Minecraft, primero deberemos decidir en qué lenguaje lo crearemos, en este caso será en javascript utilizando la librería "mineflayer", una herramienta muy potente que además funciona en las últimas versiones</p>
+						<h3>Para empezar a usarlo deberemos instalar las dependencias necesarias:</h3>
+						<ul>
+							<li>Instalar Node.js y npm</li>
+							<li>Descargar la librería mineflayer</li>
+							<li>Un servidor de Minecraft donde ejecutarlo</li>
+							<li>Un cliente de Minecraft para confirmar su correcto funcionamiento</li>
+						</ul>
+						<h3>Para instalar Node.js y npm en Ubuntu:</h3>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+# Actualizar la lista de paquetes
+sudo apt update
 
+# Instalar Node.js y npm
+sudo apt install nodejs npm
 
-</head>
+# Verificar la instalación de Node.js y npm
+node -v
+npm -v
+						</code></pre>
+						<h3>Continuaremos con la instalación de mineflayer</h3>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+npm install mineflayer
+						</code></pre>
+						<h3>Para lanzar el bot, deberémos usar el siguiente comando</h3>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+node bot.js
+						</code></pre>
+						<h4>En caso de que npm o node no funcionen, reinicia la shell o sigue los pasos que se te han indicado en la terminal al instalar las dependencias</h4>
+						<h3>A continuación un ejemplo de un bot que se conecta al servidor especificado si este está en la versión 1.8.8-1.20.4.</h3>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">
+// bot.js
+const gamemodeS = ["creative","spectator","survival","adventure"]
+const traduccionDeHoras = {
+	'noche': 'night',
+	'día': 'day'
+};
 
-<body>
+const mineflayer = require('mineflayer');
+//const axios = require('axios');
 
-    <div class="navbar clear nav-top">
-        <div class="row content">
-            <a href="#"><img class="logo" src="logo.svg"></a>
-            <a class="right" style="text-decoration: underline;" href="#"><i class="fas fa-book"></i>&nbsp; Documentation</a>
-            <a class="right" href="mailto:yourapp@email.com" target="_blank"><i class="fas fa-paper-plane"></i>&nbsp; yourapp@email.com</a>
-        </div>
-    </div>
+const bot = mineflayer.createBot({
+	host: 'mc2.ldeluipy.es', //Cambia esto a la IP de tu servidor
+	port: 25565,       //Cambia esto al puerto de tu servidor
+	username: 'J.A.R.V.I.S.', //Nombre del bot
+	//version: '1.7.5' //Forzar versión
+});
 
-    <div class="container clear">
-        <div class="row wrapper">
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+var  isDigging = false;
 
-            <div class="sidepanel">
+async function dig() {
+	if (!isDigging) return
+	const block = bot.blockAtCursor(4);
 
-                <a class="title" href="#">Introduction</a>
-                
-                <a class="section" href="#">Supported Versions</a>
-                <a class="section" href="#">About this App</a>
-                <a class="section" href="#technology">Technology</a>
+	if (!block) {
+		await sleep(100);
+	} else {
+		await bot.dig(block, "ignore", "raycast"); //2nd param: true to 'snap at block' or 'ignore' to just not turn head
+	}
+	
+	dig()
+}
 
-                <div class="divider left"></div>
+//Función para dropear
+async function dropOneStack(bot) {
+	const items = bot.inventory.items();
+	if (items.length > 0) {
+		const itemToDrop = items[0];
+		await bot.tossStack(itemToDrop);
+		console.log(`Dropped ${itemToDrop.name}`);
+	} else {
+		console.log("El inventario del bot está vacío.");
+	}
+}
 
-                <a class="title" href="#gettingstarted">Getting Started</a>
+//Comenzar con el bulce de mensajes
+bot.on('chat', (username, message) => {
+	if (username === bot.username) return; //No responder a sí mismo
+	console.log(`${username}: ${message}`);
+	message = message.toLowerCase();
 
-                <a class="section" href="#installingapp">Installing the App</a>
-                 <a class="section" href="#openingapp">Opening the App</a>
+	//Forzar a que sólo lea a un jugador
+	if (username === 'Luipy') {
 
-                <div class="divider left"></div>
+		//Cambio de hora
+		if (message.includes('jarvis haz que sea de')) {
+			let time = message.split(' ').pop();
+			//let conditionTrue = false;
 
-                <a class="title" href="#basicfeatures">Basic Features</a>
+			if (traduccionDeHoras.hasOwnProperty(time)){
+				bot.chat(`/time set ${traduccionDeHoras[time]}`);
+			}else{
+				bot.chat(`Lo siento ${username}, no entiendo qué quieres decir con "${time}".`);
+				return;
+			}
+			bot.chat(`Por supuesto ${username}.`);
+		}
 
-                <a class="section" href="#basicfeatures">Feature 1</a>
-                <a class="section" href="#basicfeatures">Feature 2</a>
-                <a class="section" href="#feature3">Feature 3</a>
-                <a class="section" href="#feature3">Feature 4</a>
-                <a class="section" href="#feature3">Feature 5</a>
+		//Cambio de gamemode
+		if (message.includes('jarvis ponme en') || (message.includes('jarvis ponte en'))) {
+			let gamemode = message.split(' ').pop();
+			if (gamemodeS.includes(gamemode)){
+				bot.chat(`Por supuesto ${username}.`);
+				if (message.includes('jarvis ponte en')) {
+					bot.chat(`/gamemode ${gamemode} ${bot.username}`);
+				}else{
+					bot.chat(`/gamemode ${gamemode} ${username}`);
+				}
+			}else{
+				bot.chat(`Lo lamento ${username}, pero no te he entendido`);
+			}
+		}
 
-                <div class="divider left"></div>
+		//Cambio de weather
+		if (message.includes('jarvis quita la lluvia')) {
+			bot.chat(`Por supuesto ${username}, la lluvia siempre me da lag.`);
+			bot.chat(`/weather clear`)
+		}
 
-                <a class="title" href="#advanced">Advanced Features</a>
+		//tp
+		if (message.includes('jarvis llévame con')) {
+			let user = message.split(' ').pop();
+			bot.chat(`Por supuesto ${username}, ahora te llevo.`);
+			bot.chat(`/tp ${username} ${user}`);
+		}
 
-                <a class="section" href="#advanced">Feature A</a>
-                <a class="section" href="#featureb">Feature B</a>
-                <a class="section" href="#featurec">Feature C</a>
-                <a class="sub-section" href="#featurec1">Feature C.1</a>
-                <a class="sub-section" href="#featurec2">Feature C.2</a>
-                <a class="section" href="#featured">Feature D</a>
+		//Traer a jarvis a ti
+		if (message.includes('jarvis ven')) {
+			bot.chat(`Ya estoy aquí ${username}!`);
+			bot.chat(`/tp ${bot.username} ${username}`);
+		}
 
-                <div class="divider left"></div>
+		//Número aleatorio
+		if (message.includes('jarvis dime un número')) {
+			let arrayPalabras = message.split(' ');
+			let max = arrayPalabras[arrayPalabras.length - 1]
+			let min = arrayPalabras[arrayPalabras.length - 3]
+			let numeroAleatorio = Math.floor(Math.random() * (max - min + 1));
+			bot.chat(`Oido ${username}! Elijo el ${numeroAleatorio}.`);
+		}
 
-                <a class="title" href="#accesibility">Accesibility</a>
+		//Cambiar color tag SIN TERMINAR
+		if (message.includes('jarvis ponme el nombre')) {
+			let color = message.split(' ').pop();
+			bot.chat(`/team add ${color}`);
+			bot.chat(`/team modify ${color} color ${color}`);
+			bot.chat(`/team join ${color} ${username}`);
+			bot.chat(`Claro ${username}! Ahí lo tienes.`);
+		}
 
-                <div class="divider left"></div>
+		//Give items SIN TERMINAR
+		if (message.includes('jarvis dame')) {
+			let arrayPalabras = message.split(' ');
+			let item = arrayPalabras[arrayPalabras.length - 1];
+			let num = arrayPalabras[arrayPalabras.length - 3];
+			bot.chat(`/give ${username} ${item} ${num}`);
+			bot.chat(`Claro ${username}! Ahí lo tienes.`);
+		}
 
-                <a class="title" href="#moreinfo">More Info</a>
-            
-             <div class="space double"></div>
+		//Borrar inventario
+		if (message.includes('jarvis límpiame el inventario')) {
+			bot.chat(`/clear ${username}`);
+			bot.chat(`Sí ${username}! No tienes lava cerca?`);
+		}
 
-            </div>
+		//Pícame esta
+		if (message.includes('jarvis empieza a picar')) {
+			bot.chat("Estoy picando!");
+			bot.chat("/gamemode survival");
+			isDigging = true;
+			dig();
+		}
 
-            <div class="right-col">
-            
+		//Parar de picar
+		if (message.includes('jarvis para de picar') || message.includes('jarvis deja de picar')) {
+			bot.chat("Ok, dejo de picar");
+			bot.chat("/gamemode spectator");
+			isDigging = false;
+		}
 
+		//jarvis dice:
+		if (message.includes('jarvis di') || message.includes('jarvis ejecuta')) {
+			let palabras = message.split(' ');
+			let palabrasRestantes = palabras.slice(2);
+			let nuevaFrase = palabrasRestantes.join(' ');
+			bot.chat("Ok");
+			bot.chat(`/${nuevaFrase}`);
+		}
 
-                <h1 >Introduction</h1>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
-            
-                <h2>Supported Versions:</h2>
-             
-                <p><b>App Version 1.0.0.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		//jarvis dropea todo:
+		if (message.includes('jarvis droppea stack')) {
+			bot.chat("Ok, lo lanzaré");
+			dropOneStack(bot);
+		}
 
-                <h2>About this App</h2>
-                
-                <p id="technology"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		//jarvis dropea 1 item: SIN TERMINAR
+		// if (message.includes('jarvis droppea 1')) {
+		//     bot.chat("Ok, lo lanzaré");
+		//     dropOneItem(bot);
+		// }
 
-                <h2>Technology</h2>
-                
-                <p>This app is built with Javascript, HTML and CSS.<br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+		//Jarvis cambia de slot
+		if (message.includes('jarvis slot')) {
+			let num = message.split(' ').pop();
+			bot.chat(`Oido, slot ${num} puesto`);
+			bot.setQuickBarSlot(num);
+		}
 
-                <p id="gettingstarted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p> 
-                 
-        <div class="divider" style="width:24%; margin:30px 0;"></div>
+		//Jarvis se muere
+		if (message.includes('jarvis suicidate')) {
+			bot.chat(`Oh...`);
+			bot.chat(`/kill`);
+		}
+	}
+});
 
-                <h1>Getting Started</h1>
+//Mensaje de entrada de un jugador
+// bot.on('playerJoined', (player) => {
+//     console.log(`${player.username} joined the game`);
+//     //appendToLogFile(`${player.username} ha entrado al juego`);
+// });
 
-                <h2>This is a sub-header</h2>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
+//Mensaje de salida de un jugador
+bot.on('playerLeft', (player) => {
+	console.log(`${player.username} left the game`);
+	//appendToLogFile(`${player.username} ha salido del juego`);
+});
 
-                <p id="installingapp"><b>Important:</b> This line is for an important information.</p>
-                
-                
-                <h2>Install the App</h2>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                
-                   <ol>
-                    <li>
-                     The first thing you need to do to install this app.
-                    </li>
-                    <br>
-                    <li>
-                    The second thing you need to do to install this app.
-                    </li>
-                    <br id="openingapp">
-                    <li>
-                     The app is installed now.
-                    </li>
-                    <br>
-                </ol>
-                
-
-                <h2>Opening the app</h2>
-                
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                
-                 <ol>
-                    <li>
-                     The first thing you need to do to open this app.
-                    </li>
-                    <br>
-                    <li>
-                     The second thing you need to do to open this app.
-                    </li>
-                    <br>
-                    <li>
-                      The third thing you need to do to open this app.
-                    </li>
-                    <br>
-                    <li>
-                     Open the app and start using it!
-                    </li>
-                    <br>
-                </ol>
-                
-                <p id="basicfeatures">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                    
-            <div class="divider" style="width:24%; margin:30px 0;"></div>
-            
-            
-                <h1>Basic Features</h1>
-
-                <h2>Feature 1</h2>
-                
-                <p id="basicfeatures">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                </p>
-                
-                <h2>Feature 2</h2>
-                
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <br><br>
-                <b>Explanation 1</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                <br>
-                <br>
-                <b>Explanation 2</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                <br>
-                <br>
-                <b>Explanation 3</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                <br>
-                <br id="feature3">
-                <b>Explanation 4</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                
-                <h2>Feature 3</h2>
-                
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <br id="feature4">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                
-                <h2>Feature 4</h2>
-                
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  <br>
-                  <br>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 <br>
-                 <br id="feature5">
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                
-                
-                <h2>Feature 5</h2>
-                
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                <br>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <br>
-                </p>
-                
-        
-                
-               <h2>Feature 5</h2>
-                 
-               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                <br id="advanced">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                
-                <div class="divider" style="width:24%; margin:30px 0;"></div>
-                
-                <h1>Advanced Features</h1>
-                
-                <h2>Feature A</h2>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                <br>
-                <br id="featureb">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                   
-                
-                <h2>Feature B</h2>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <br>
-                <br id="featurec">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                
-                
-                <h2>Feature C</h2>
-                  
-                <p id="featurec1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  
-                 
-                <h2>Feature C.1</h2>
-
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit:
-                </p>
-                
-                   <ul>
-                    <li>
-                    <b>Point 1</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    <br>
-                    <li>
-                    <b>Point 2</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                    </li>
-                    <br id="featurec2">
-                     <li>
-                    <b>Point 3</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    <br>
-                </ul>
-                   
-                 <h2>Feauture C.2</h2>
-                   
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    <br>
-                    <br>
-                     <b>Important:</b> Please notice that lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 </p>
-                  
-                  
-                  <h2>Feature D</h2>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  <br>
-                  <br id="accesibility">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  
-                  
-                <div class="divider" style="width:24%; margin:30px 0;"></div>
-                   
-                   <h1>Accessibility</h1>
-                   
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                   <br>
-                   <br>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                   <br>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                   
-                   <p>Lorem ipsum dolor sit amet.
-                      <br id="moreinfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                   
-                <div class="divider" style="width:24%; margin:30px 0;"></div>
-
-                <h1>More Info</h1>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.marks are protected by intellectual property rights.</p>
-
-                <div class="doublespace"></div>
-                <div class="divider" style="width:24%; margin:30px 0;"></div>
-                
-
-            </div>
-
-        </div>
+bot.on('kicked', (reason, loggedIn) => {
+	console.log(`El bot ha sido expulsado. Razón: ${reason}. Logueado: ${loggedIn}`);
+});
 
 
-    </div>
+//bot.on('error', (err) => console.error('Bot error:', err));
+//bot.on('end', () => console.log('Bot disconnected'));
 
 
-</body>
+//El bot caza todos los mensajes del chat, para un fácil tratamiento de ellos,
+//se pueden enviar directamente a un archivo de texto al lanzar el bot:
+//node bot.js >> ~/mcBot/chatLog.txt
+						</code></pre>
+						</div>
+					</section>
 
+						<!-- <section>
+							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Sed ipsum dolor</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Feugiat consequat</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section> -->
+						<!-- <section>
+							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Ultricies aliquam</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section> -->
+					
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h1>Ejemplo de Curriculum Virtual <a href="https://luipy56.github.io/LdeLuipy/CVVirtual/" class="underline" target="_blank">Clíckame!</a></h1>
+							<p>Insertar cantidades industriales de texto.</p>
+
+
+
+
+
+
+
+							
+							<!-- <h2>What we do</h2>
+							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3>Lorem ipsum amet</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-lock"></span>
+									<h3>Aliquam sed nullam</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Sed erat ullam corper</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Veroeros quis lorem</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-link"></span>
+									<h3>Urna quis bibendum</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-gem"></span>
+									<h3>Aliquam urna dapibus</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Learn more</a></li>
+							</ul> -->
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style2 fade-up">
+						<div class="inner">
+							<h1>Instalar y Configurar Servidores de Minecraft</h1>
+							<h2>Incluir mucho texto</h2>
+
+						
+							<!-- <h2>Get in touch</h2>
+							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>12345 Somewhere Road #654<br />
+											Nashville, TN 00000-0000<br />
+											USA</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="#">user@untitled.tld</a>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span>(000) 000-0000</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div> -->
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+
+	</body>
 </html>
