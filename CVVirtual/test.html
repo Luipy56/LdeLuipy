@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+.L-darker-gray{background-color:#161616;color:white;};
+        .flag-icon {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .flag-icon img {
+            height: 25px; /* Ajusta esta altura según la bandera más grande */
+            width: auto; /* Mantiene la proporción de la imagen */
+            vertical-align: middle;
+        }
+        .button{
+            background-color: #161616;
+            color:white;
+            font-weight: bold;
+        }
+        p{
+            font-size: 16px;
+        }
+
+</style>
+</head>
+<body style="background-color: #292929;"  >
+    <div class="language-selector" style="margin-top: 20px;padding-left: 10px;">
+        <button id="language-switch" class="button" onclick="toggleLanguage()">
+            <span id="language-text" class="flag-icon"><img style="width: 30px;" src="https://imgs.search.brave.com/FWxH_GeVGAGDqcgglEHnm1XTCRCjWfOjdQDypVYZk-o/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi84Lzg5L0Jh/bmRlcmFfZGVfRXNw/YSVDMyVCMWEuc3Zn/LzUxMnB4LUJhbmRl/cmFfZGVfRXNwYSVD/MyVCMWEuc3ZnLnBu/Zw" alt="Spain Flag"> Español</span>
+        </button>
+    </div>
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+    <!-- Left Column -->
+    <div class="w3-third">
+      <div class="L-darker-gray w3-text-light-grey w3-card-4">
+        <div class="w3-display-container" style="background-color: #1f1f1f;">
+          <img src="Ojos.png" style="width:70%; margin-left:14%; image-rendering:pixelated;" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+            <h2  style="color:#fff;">Yoel Berjaga García</h2>
+          </div>
+        </div>
+        <div class="w3-container ">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Estudiante</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Barcelona, España</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>yoelberjaga@mail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>000000000</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <p>Programación</p>
+          <div class=" w3-round-xlarge w3-small" style="background-color: #292929;">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:2%">2%</div>
+          </div>
+          <p>Edición gráfico</p>
+          <div class=" w3-round-xlarge w3-small" style="background-color: rgb(41, 41, 41);">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:15%">15%</div>
+          </div>
+          <p>Redstone</p>
+          <div class=" w3-round-xlarge w3-small" style="background-color: rgb(41, 41, 41);">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+          </div>
+          <p>Sed de conocimiento</p>
+          <div class=" w3-round-xlarge w3-small" style="background-color: #292929;">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:107%;">110%</div>
+          </div>
+          <br>
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Idiomas</b></p>
+          <p>Spanish</p>
+          <div class=" w3-round-xlarge w3-small" style="background-color: rgb(41, 41, 41);">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+          </div>
+          <p>English</p>
+          <div class=" w3-round-xlarge w3-small" style="background-color: rgb(41, 41, 41);">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:66%"></div>
+          </div>
+          <p>Català</p>
+          <div class=" w3-round-xlarge w3-small" style="background-color: rgb(41, 41, 41);">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:5%"></div>
+          </div>
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card L-darker-gray w3-margin-bottom">
+        <h2 class="w3-text-light-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
+            <span data-lang="es">Experiencia laboral y tiempo libre</span>
+            <span data-lang="en" style="display: none;">Work experience and leisure time</span>
+        </h2>
+        <div class="w3-container">
+            <h5><b>
+                <span data-lang="es">Vivir, respirar y comer</span>
+                <span data-lang="en" style="display: none;">To live, to breathe, and to eat</span>
+            </b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Agosto 2003 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+            <p>
+                <span data-lang="es">Desde entonces y hasta ahora me encargo CADA día de mantenerme con vida.</span>
+                <span data-lang="en" style="display: none;">Since then and until now, I make sure EVERY day to stay alive.</span>
+            </p>
+            
+            <!-- <h1>
+            <span id="title-es">Bienvenido</span>
+            <span id="title-en" style="display: none;">Welcome</span>
+            </h1>
+            <p>
+            <span id="text-es">Este es un ejemplo de contenido en español.</span>
+            <span id="text-en" style="display: none;">This is an example of content in English.</span>
+            </p> -->
+  
+            <hr>
+        </div>
+        <div class="w3-container">
+            <h5><b>Minecraft Servers Admin / <a href="https://mc.ldeluipy.es" target="_blank">mc.ldeluipy.com</a></b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Julio 2024 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+            <p>
+                <span data-lang="es">Comencé a administrar dos servidores Ubuntu, cada uno alojando servidores de Minecraft rotativos, con la certeza de que esto me abriría las puertas a numerosos proyectos. Efectivamente, ha resultado en una variedad de tareas interesantes para mí, incluyendo la creación de una web de monitorización y el desarrollo de dos bots: uno in-game y otro en Discord que se comunican entre sí, ambos llamados JARVIS.                </span>
+                <span data-lang="en" style="display: none;">I started managing two Ubuntu servers, each hosting rotating Minecraft servers, confident that this would open doors to numerous projects for me. Indeed, it has resulted in a variety of interesting tasks, including setting up a monitoring website and developing two bots: one in-game and another on Discord that communicate with each other, both named JARVIS.</span>
+            </p>
+            <hr>
+        </div>
+        <div class="w3-container">
+          <h5 ><b>Youtuber por diversión / <a href="https://www.youtube.com/@luipy" target="_blank">@luipy</a></b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+          <p>Tengo la placa de madera!!!</p>
+          <p>Aunque parezca mentira, este proyecto me ha ayudado mucho, deade hablar mejor y romper la verguenza hasta a mejorar mis skills de edición de vídeo.</p>
+          <br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card L-darker-gray">
+        <h2 class="w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Educación</h2>
+        <div class="w3-container">
+          <h5><b>INS La Pineda Badalona</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+          <p>Que no se diga que no lo han intentado</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 ><b>La Universidad de mi Casa</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+          <p>Yo mismo, buscándome cosas que hacer, aprendo más de lo que yo mismo me creo. Este mes pre verano, ya he hecho más que en todo el verano pasado.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 ><b>UPCM</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>YYYY - YYYY</h6>
+          <p>Universitat Politécnica de mis Cojones Morenos</p><br>
+        </div>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Encuéntrame en:</p>
+  <i class="fa fa-youtube-play w3-hover-opacity"></i>
+  <i class="fa fa-skype w3-hover-opacity"></i>
+  <i class="fa fa-github w3-hover-opacity"></i>
+  <i class="fa fa-google w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-reddit-alien w3-hover-opacity"></i>
+  <i class="fa fa-twitch w3-hover-opacity"></i>
+  <p>Plantilla hecha por  <a href="https://www.w3schools.com/w3css/w3css_templates.asp" target="_blank">W3School</a></p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
