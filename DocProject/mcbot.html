@@ -1,0 +1,501 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Docu Luipy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Bienvenido</a></li>
+							<li><a href="#one">Requisitos</a></li>
+							<li><a href="#two">Instalar librería</a></li>
+							<li><a href="#three">Lógica básica</a></li>
+							<li><a href="#four">Programar mi Bot</a></li>
+							<li><a href="#five">Ejemplos Avanzados</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Minecraft Bot con "Mineflayer"</h1>
+							<p>Quiéres aprender a programar tu propio bot y que sea capaz de minar o atacar automáticamente? <br>
+							Con este tutorial aprenderás a crear y configurar tu propio bot para servidores de Minecraft que funcione incluso en vanilla sin tener que usar plugins.<!--<a href="http://html5up.net">HTML5 UP</a>--><br/></p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Vamos</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2">
+						<div class="inner">
+						<h1>Requisitos para completar el tutorial</h1>
+						<p>Antes de empezar, recuerda que cada servidor tiene sus normas. Respeta y utiliza los bots con cautela.</p>
+						<p>Para poder crear nuestro propio bot de Minecraft, primero deberemos decidir en qué lenguaje lo crearemos, en este caso será en javascript utilizando la librería "mineflayer", una herramienta muy potente que además funciona en las últimas versiones</p>
+						<h2>Para empezar necesitaremos los siguientes ingredientes</h2>
+						<ul class="ulbold">
+							<li>Un host, puede ser tu ordenador personal o un servidor</li>
+							<li><b>Sistema Operativo Ubuntu.</b></li>
+							El host puede ser un Windows, pero recomiendo utilizar "Ubuntu", la distribución más popular de Linux.<br>
+							<!-- Si quieres hacerlo en Windows, tendrás que descargar las dependencias con otros comandos. -->
+							<li><b>Un servidor de Minecraft NoPremium donde ejecutarlo.</b></li>
+							<!-- Si decides hacer el proceso en local, puedes abrir un servidor LAN desde tu propio cliente de Minecraft. <br> -->
+							El server deberá estar entre la 1.8.8 y la 1.20.4 ya que la librería acepta actualmente sólo los protocolos de estas versiones. Puedes consultar la disponibilidad de los protocolos actualmente en <a class="wlink" href="https://github.com/PrismarineJS/mineflayer">PrismarineJS</a>
+							<li>Un cliente de Minecraft para confirmar su correcto funcionamiento</li>
+							<li>Nociones de programación</li>
+							No es obligatorio, pero ayudará en el proceso de configuración y a que puedas implementas más funciones.
+							<li>Conexión a internet</li>
+						</ul>
+						<p>Si no sabes cómo crear tu propio servidor de Minecraft, te recomiendo ver este otro tutorial: <a class="wlink" href=""><i>/To Be Continued/</i></a></p>
+						<span id="two"></span>
+						<h2>Instalar dependencias y la librería</h2>
+						<p>Para que el bot funcione necesitaremos instalar <b>Node.js</b> y <b>npm</b> para poder configurar y lanzar el bot.</p>
+						<h3>Instalar Node.js y npm en Ubuntu:</h3>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+# Actualizar la lista de paquetes
+sudo apt update
+
+# Instalar Node.js y npm
+sudo apt install nodejs npm
+
+# Verificar la instalación de Node.js y npm
+node -v
+npm -v
+						</code></pre>
+						<p>En caso de utilizar Windows, deberás descargar el instalador de Node.js desde su  <a class="wlink" href="https://nodejs.org/en">página oficial</a> e instalarlo.</p>
+						<p>Actualmente, las versiones que necesitas para que la librería funcione son:</p>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+node -v
+v18.X.X
+npm -v
+10.7.X
+						</code></pre>
+						<p>En caso de que la librería necesite una versión distinta, al lanzar el bot, se te comunicará por consola la versión en concreto que necesitas instalar.</p>
+						<h3>Crear nuestro directorio donde empezar a trabajar en el bot</h3>
+						<p>En Ubuntu, crea y ve hacia el directorio donde desees trabajar, por ejemplo:</p>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+# La birgurilla "~" apunta al home de tu usario ej. "/home/Luipy"
+mkdir ~/mcBot
+cd ~/mcBot
+						</code></pre>
+						<p>En caso de estar en Windows, crea la carpeta como lo harías siempre, apartir de aquí los pasos tanto en Ubuntu como en Windows son iguales.</p>
+						<h3>Instalación de mineflayer</h3>
+						<p>Antes de instalar mineflayer, tenemos que iniciar un proyecto de Node.js para que cree nuestros archivos de configuración. Para ello, desde la terminal y asegurándote estar en el directori/carpeta correcta, ejecuta el siguiente comando:</p>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+npm init -y
+						</code></pre>
+						<p>Veremos que se nos han creado un par de archivos y una subcarpeta llamados <b>"package.json", "package-lock.json"</b> y <b>la carpeta "node_modules".</b> </br>Ahora ya podemos descargar la librería, recuerda ejecutar todos estos comandos dentro de la carpeta que hemos creado.</p>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+npm install mineflayer
+						</code></pre>
+						<h3>Configuración principal</h3>
+						<p>Abre el archivo <b>"package.json"</b>, dentro deberías ver algo así:</p>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-json">//package.json
+{
+	"name": "NOMBREDELBOT",
+	"version": "1.0.0",
+	"description": "",
+	"main": "NOMBREDELARCHIVO.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.7.2",
+		"body-parser": "^1.20.2",
+		"express": "^4.19.2",
+		"mineflayer": "^4.20.1",
+		"socket.io": "^4.7.5"
+	}
+}</code></pre>
+						<span id="three"></span>
+						<p>Cambia <b>"NOMBREDELBOT"</b> por el nombre que quieras ponerle a tu bot, comillas incluidas, y <b>NOMBREDELARCHIVO</b> por el nombre que quieras ponerle al archivo de programación de tu bot, por ejemplo: <b>"J.A.R.V.I.S."</b> y <b>"bot.js"</b> respectivamente.</p>
+						<h2>Lógica del Bot</h2>
+						<p>A continuación verás los mínimos que tiene que tener la programación de tu bot para funcionar correctamente.</p>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//bot.js
+const mineflayer = require('mineflayer');
+
+const bot = mineflayer.createBot({
+    host: 'IPDelServidor',
+    port: PuertoDelServidor,
+    username: 'NombreDelBot',
+});						</code></pre>
+						<p>Asegúrate de cambiar la <b>IPDelServidor </b> por la IP de tu servidor, comilla ' ' incluida, junto al puerto del servidor y el nombre del bot. Si el bot y el servidor están en el mismo host, puedes utilizar <b>'localhost'</b> en su lugar.</p>
+						<p>Cómo saber qué puerto utiliza mi servidor? <br>Utilices un host como Aternos o tu propia máquina, puedes comprobar el puerto que está utilizando el servidor mirando en el archivo <b>"server.propierties"</b>, donde saldrá especificado en la entrada: <b>"server-port=NºDelPuerto"</b>, supongamos que es:</p>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//server.propierties
+server-port=25565
+</code></pre>
+						<p>25565 será el puerto que utilizaremos en la configuración del bot. <br> Como ejemplo:</p>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//bot.js
+const mineflayer = require('mineflayer');
+
+const bot = mineflayer.createBot({
+	host: 'localhost',
+	port: 25565,
+	username: 'J.A.R.V.I.S.',
+});
+</code></pre>
+						<p>Ten en cuenta que NO todos los servidores permiten que bots como este entren, por lo que te recomiendo NO intentar conectarlo a un servidor público cualquiera.</p>
+						<p>Para lanzar el bot, deberémos usar el siguiente comando</p>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+node bot.js
+						</code></pre>
+						<p>En caso de que npm o node no funcionen, reinicia la shell o sigue los pasos que se te han indicado en la terminal al instalarlos.</p>
+						<p>Si todo lo has hecho correctamente, el bot se unirá automáticamente en al servidor</p>
+						<img class="img1" src="images/jarvisPortrait.png" alt="Imagen del bot in-game">
+						<p>Es importante destacar que el servidor debe de ser NoPreomium, es decir, que en la configuración del servidor especifique lo siguiente:</p>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">//server.propierties
+online-mode=false</code></pre>
+						<span id="four"></span>
+						<p>Esto debe de ser así ya que de lo contrario, el servidor intentará validar la sesión del player resultando en un error de validación.</p>
+						<h2>Programar mi Bot</h2>
+						<p>Ahora que nuestro bot funciona correctamente, es hora de programarlo para que haga cosas por nosotros.</p>
+						<p>Este apartado será un poco más técnico ya que iremos directamente al código. Empezaremos por hacer que el bot sea capaz de entender algunas frases que los demás jugadores digan por el chat del juego. Para ello utilizaremos algo tan simple como una función <b>IF</b>, con lo que podremos filtrar frases que digan los jugadores para que el bot realice acciones.<br>Ten en cuenta que las líneas que empiecen por "//" son comentarios y no afectan a la programación del bot más que para facilitar su lectura a la hora de entender el código.</p>
+						<p>Recuerda que poniendo el ratón encima del bloque de código en la web y manteniendo presionada la tecla "Shift" podrás mover la página horizontalmente para leer mejor el código.</p>
+						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//bot.js
+const mineflayer = require('mineflayer');
+
+const bot = mineflayer.createBot({
+	host: 'localhost',
+	port: 25565,
+	username: 'J.A.R.V.I.S.',
+});
+
+//Iniciaremos el bloque de mensajes:
+//La función siguiente permitirá al bot "leer" los mensajes del chat y almacenar en variables tanto el nombre del jugador ("username") como el mensaje que ha sido enviado ("message")
+//Este proceso nos permitirá automatizar tareas y activarlas simplemente escribiendo en el chat del juego
+bot.on('chat', (username, message) => {
+
+	//Comprobamos con un IF que el nombre del jugador NO es el del bot, para que no se confunda y no pueda responderse a sí mismo
+	if (username === bot.username) return;
+
+	//Opcionalmente, imprimimos los mensajes de los jugadores en la consola del host
+	console.log(`${username}: ${message}`);
+
+	//Transformaremos cualquier mensaje a minúsculas para facilitar su procesamiento
+	message = message.toLowerCase();
+
+	//Cambio de hora
+	//Vamos a programar ahora un "IF" que verificará si las palabras que dice el jugador
+	//coinciden con una frase específica. Esto significa que si alguien escribe esa frase
+	//en el chat, la condición del "IF" cumplirá ejecutando la acción asociada.
+	if (message.includes('hola jarvis')) {
+		//De esta manera, cada vez que un jugador diga la frase "hola jarvis"
+		//Esta nombre "jarvis" no tiene nada que ver con el nombre del bot en la configuración
+		//Podríamos poner "Pepito" y seguiría funcionando
+
+		//Por último utilizaremos una propiedad del objeto bot, para que escriba en el chat
+		bot.chat(`Hola ${username}!`);
+		//Todo lo que haya dentro de los paréntesis lo dirá el bot por el chat,
+		//incluso si es un comando
+		//Para concretar más, he utilizado el acento ` para poder poner
+		//variables dentro de al función
+		//De esta manera podemos usar la variable "username" para que el bot diga
+		//el nombre del jugador que le ha llamado
+	}
+});</code></pre>
+						<p style="font-style: italic;">Consideras que los comentarios, es decir, la explicación del código, son difícilis de leer de esta manera? Crees que sería mejor dividir el código en trozos y explicarlo en un párrafo normal? Dame tu feedback por discord! <a class="wlink" href="https://discord.com/invite/6ExMmZM6rK"> Enlace a Discord</a></p>
+						<p>Gracias a esto, el bot nos entenderá cuando digamos <b>"hola jarvis"</b> por el chat.</p>
+						<img class="img1" src="images/jarvisHola.png" alt="Imagen del bot diciendo Hola por el chat">
+						<p>Como en nuestro <b>"IF"</b> estamos utilizando la funcion <b>"includes"</b>, no hace falta que digamos específicamente <b>"hola jarvis"</b>, podríamos decir <b>"Anda, Hola Jarvis, qué tal?"</b> y seguiría funcionando correctamente.</p>
+						<p>A raíz de esto, podríamos hacer infinidad de cosas y activarlas simplemente con decírselo por el chat, como si fuera un jugador más en el servidor.<br>Aquí te dejo otro ejemplo donde con un poco más de lógica, Jarvis nos pondrá en el modo de juego que queramos.</p>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//Dentro de la función de lectura del chat
+
+//Cambio de gamemode
+//Verificamos que el jugador diga "jarvis ponme en" o "jarvis ponte en" para activar la función
+if (message.includes('jarvis ponme en') || (message.includes('jarvis ponte en'))) {
+
+	//Extraemos la última palabra que haya dicho el jugador. La intención es que este diga:
+	//"jarvis ponme en creative"
+	//El código aislará la última palabra de la frase "creative" y la guardará como la variable "gamemode"
+	let gamemode = message.split(' ').pop();
+	//Hemos declarado la variable como let para que, una vez el bloque IF termine, la variable se borre ahorrando espacio en memoria
+
+	//Comprobaremos si la palabra que ha dicho en el jugador es un modo de juego válido en Minecraft, luego te explicaré cómo
+	if (gamemodeS.includes(gamemode)){
+
+		//Confirmamos que ha funcionado haciendo que el bot diga algo por el chat
+		bot.chat(`Por supuesto ${username}.`);
+
+		//Diferenciamos en si el jugador ha dicho "ponte" o "ponme"
+		if (message.includes('jarvis ponte en')) {
+
+			//En caso de ponte, el bot cambiará de modo de juego
+			bot.chat(`/gamemode ${gamemode} ${bot.username}`);
+
+		}else{
+			//De lo contrario, cambiará el modo al jugador que haya escrito el comando
+			bot.chat(`/gamemode ${gamemode} ${username}`);
+			
+		}
+	}else{
+		//Si el jugador ha dicho un modo de juego NO válido, el bot dirá:
+		bot.chat(`Lo lamento ${username}, pero no te he entendido`);
+	}
+}
+</code></pre>
+						<p>Como podrás ver en el código, se está comprobando si el gamemode que ha dicho el jugador, está dentro de un array. <br>Este array podemos declararlo como una variable constante al principio de nuestro archivo:</p>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//bot.js
+const gamemodeS = ["creative","spectator","survival","adventure"]
+//Resto del código</code></pre>
+						<p>Si el jugador dice una de las palabras que hay dentro del array, la condición del <b>"IF"</b> se cumplirá.</p>
+						<p>Recuerda que los <b>"IFs"</b> que quieras que detecten lo que dice el jugador por el chat, deben de estar dentro de la función principal donde el bot lee el chat:</p>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//función de lectura
+bot.on('chat', (username, message) => {
+	//Tu código aquí
+});</code></pre>
+						<p>Ten en cuenta, que este código es muy simple y no cuenta con un buen manejo de errores e incluso no sería capaz de lanzar los comandos si le decimos el modo de juego en Español. <br>Para solucionar esto, podríamos introducir un array asociativo que al decirle <b>"creativo"</b>, o cualquier modo de juego, el programa lo "tradujera automáticamente" al inglés.</p>
+						<p>A continuación veremos un ejemplo donde utilizo esta idea. El bot será capaz de cambiar la hora del juego aún diciéndoselo en Español.</p>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//bot.js
+
+//Primero crearemos el array asociativo como una constante
+const traduccionDeHoras = {
+	'noche': 'night',
+	'día': 'day',
+};
+//Resto del código</code></pre>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//Dentro de la función de lectura del chat
+
+//Cambio de hora
+if (message.includes('jarvis haz que sea de')) {
+	//Volvemos a pedirle que verifique si el jugador ha dicho una frase en concreto
+
+	let time = message.split(' ').pop();
+	//Volvemos a separar la última palabra de la frase y la declaramos como "time"
+
+	//Comprobamos si la palabra está dentro del array
+	if (traduccionDeHoras.hasOwnProperty(time)){
+
+		//El bot ejecute el comando por el chat utilizando el valor que
+		//ha especificado el jugador
+		//Durante el proceso, y gracias al array asociativo, traducirá
+		//el valor para que el juego lo entienda.
+		//Es decir, cambiará: día -> day | noche -> night
+		bot.chat(`/time set ${traduccionDeHoras[time]}`);
+
+	}else{
+		//De lo contrario, si la palabra que ha dicho el jugador no existe en el array
+		//el bot dirá que no lo ha entendido.
+		bot.chat(`Lo siento ${username}, no entiendo qué quieres decir con "${time}".`);
+		return;
+		//Gracis al return, haremos que la función pare aquí y no ejecute nada más
+	}
+	//Por último, si todo ha salido bien, el bot confirmará el cambio de hora
+	bot.chat(`Por supuesto ${username}.`);
+}</code></pre>
+						<img class="img1" src="images/jarvisNoche.png" alt="Imagen del bot in-game">
+						<br><br>
+						<span id="five"></span>
+						<h2>Ejemplos prácticos avanzados</h2>
+						<h3>Picar automáticamente</h3>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//bot.js
+
+const mineflayer = require('mineflayer');
+
+const bot = mineflayer.createBot({
+	host: 'localhost',
+	port: 25565,
+	username: 'J.A.R.V.I.S.'
+});
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+var  isDigging = false;
+
+async function dig() {
+	if (!isDigging) return
+	const block = bot.blockAtCursor(4);
+
+	if (!block) {
+		await sleep(100);
+	} else {
+		await bot.dig(block, "ignore", "raycast"); //2nd param: true to 'snap at block' or 'ignore' to just not turn head
+	}
+	dig()
+}
+bot.on('chat', (username, message) => {
+    if (username === bot.username) return;
+    console.log(`${username}: ${message}`);
+    message = message.toLowerCase();
+
+	//Pícame ésta
+	if (message.includes('jarvis empieza a picar')) {
+		if (isDigging == false){
+			bot.chat("Estoy picando!");
+			bot.chat("/gamemode survival");
+			isDigging = true;
+			dig();
+		}else{
+			bot.chat("Ya estaba picando!");
+		}
+	}
+
+	//Parar de picar
+	if (message.includes('jarvis para de picar') || message.includes('jarvis deja de picar')) {
+		if (isDigging == true){
+			bot.chat("Ok, dejo de picar");
+			bot.chat("/gamemode spectator");
+			isDigging = false;
+		}else{
+			bot.chat("Pero si no estoy picando!");
+		}
+	}
+});
+</code></pre>
+						<img class="img1" src="images/jarvisPica.png" alt="Imagen del bot in-game">
+						<h3>Cambiar el color de nuestro nick</h3>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//bot.js
+
+const mineflayer = require('mineflayer');
+
+const bot = mineflayer.createBot({
+	host: 'localhost',
+	port: 25565,
+	username: 'J.A.R.V.I.S.'
+});
+
+const traduccionDeColores = {
+	'verde':'green',
+	'lima':'green',
+	'rojo':'red',
+	'dorado':'gold',
+	'azul':'blue',
+	'negro':'black',
+	'cyan':'dark_aqua',
+	'cian':'dark_aqua',
+	'gris':'gray',
+	'rosa':'light_purple',
+	'morado':'dark_purple',
+	'amarillo':'yellow'
+	//etc.
+}
+
+bot.on('chat', (username, message) => {
+	if (username === bot.username) return;
+	console.log(`${username}: ${message}`);
+	message = message.toLowerCase();
+
+	//Cambiar color tag
+	//Se espera que diga: "jarvis ponme el nombre COLOR"
+	if (message.includes('jarvis ponme el nombre')) {
+		let color = message.split(' ').pop();
+		if (traduccionDeColores.hasOwnProperty(color)){
+			color = traduccionDeColores[color]
+			bot.chat(`/team add ${color}`);
+			bot.chat(`/team modify ${color} color ${color}`);
+			bot.chat(`/team join ${color} ${username}`);
+			bot.chat(`Claro ${username}! Ahí lo tienes.`);
+		}else{
+			bot.chat(`Lo siento ${username}, pero no entiendo qué quieres decir con "${color}".`);
+		}
+}
+});</code></pre>
+						<img class="img1" src="images/jarvisColor.png" alt="Imagen del bot in-game">
+						<h3>Hacer que el bot dropee ítems y cambie de slot</h3>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//bot.js
+	
+const mineflayer = require('mineflayer');
+	
+const bot = mineflayer.createBot({
+	host: 'localhost',
+	port: 25565,
+	username: 'J.A.R.V.I.S.'
+});
+
+//Función para dropear
+async function dropOneStack(bot) {
+    const items = bot.inventory.items();
+    if (items.length > 0) {
+        const itemToDrop = items[0];
+        await bot.tossStack(itemToDrop);
+        console.log(`Dropped ${itemToDrop.name}`);
+    } else {
+        console.log("El inventario del bot está vacío.");
+    }
+}
+
+bot.on('chat', (username, message) => {
+	if (username === bot.username) return;
+	console.log(`${username}: ${message}`);
+	message = message.toLowerCase();
+
+	//jarvis dropea todo:
+	if (message.includes('jarvis droppea stack')) {
+		bot.chat("Ok, lo lanzaré");
+		dropOneStack(bot);
+	}
+	//Jarvis cambia de slot
+	if (message.includes('jarvis slot')) {
+		let num = message.split(' ').pop();
+		bot.chat(`Oido, slot ${num} puesto`);
+		bot.setQuickBarSlot(num);
+	}
+});</code></pre>
+						<h3>Hacer que el bot sólo haga caso a un jugador en concreto</h3>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//función de lectura
+
+bot.on('chat', (username, message) => {
+	if (username === bot.username) return;
+	console.log(`${username}: ${message}`);
+	message = message.toLowerCase();
+
+	if (username === 'NombreDelJugador') {
+	
+		//Resto del código
+	
+	}
+});</code></pre>
+						<p>Espero que esta guía te haya ayudado, si te has topado con algún problema mientras realizabas los pasos, te gustaría que añadiera algo o simplemente te gustaría aportar tu feedback, ya sea bueno o malo, recuerda que puedes contactar conmigo fácilmente por el canal de discord o si prefieres por mensaje directo. <a class="wlink" href="https://discord.com/invite/6ExMmZM6rK"> Canal de Discord</a></p>
+						<p>Encuéntrame también en <a class="wlink" href="https://bit.ly/33fAIIS"> Youtube</a>!</p>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt" >
+				<div class="inner">
+					<ul class="menu" style="color: white;">
+						<li>&copy; Untitled. All rights reserved.</li><li>Plantilla creada por: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li><li><a href="site.ldeluipy.es" target="_blank">LdeLuipy®</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-json.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+
+	</body>
+</html>
