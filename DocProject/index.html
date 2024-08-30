@@ -19,12 +19,7 @@
 			<section id="sidebar">
 				<div class="inner">
 					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">JS Bot</a></li>
-							<li><a href="#two">CV Virtual</a></li>
-							<li><a href="#three">MC Server</a></li>
-						</ul>
+						<ul id ="menu"></ul>
 					</nav>
 				</div>
 			</section>
@@ -39,13 +34,13 @@
 							<p>Aquí encontrarás el índice de la documentación <!--<a href="http://html5up.net">HTML5 UP</a>--><br /> 
 							y un resumen de la misma.<!--<a href="http://html5up.net/license">Creative Commons</a>--></p>
 							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Vamos</a></li>
+								<li><a href="#ref1" class="button scrolly">Vamos</a></li>
 							</ul>
 						</div>
 					</section>
 
 				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
+					<section id="refStandar" class="wrapper style2 spotlights">
 						<div class="inner">
 						<h1>Bot para Minecraft con "Mineflayer"</h1>
 						<p>Quiéres aprender a programar tu propio bot y que sea capaz de minar o atacar automáticamente? <br>
@@ -93,7 +88,7 @@
 					
 
 				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
+					<section id="refStandar" class="wrapper style3 fade-up">
 						<div class="inner">
 							<!--
 							<h1>Ejemplo de Curriculum Virtual <a href="https://luipy56.github.io/LdeLuipy/CVVirtual/" class="wlink" target="_blank">Clíckame!</a></h1>
@@ -101,14 +96,9 @@
 							-->
 							<h1>Ejemplo de Currículum Virtual</h1>
 							<h3>En construcción</h3>
-
-
-
-
-
-
-							
+						
 							<!-- <h2>What we do</h2>
+							 
 							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
 							<div class="features">
 								<section>
@@ -149,11 +139,12 @@
 					</section>
 
 				<!-- Three -->
-					<section id="three" class="wrapper style2 fade-up">
+					<section id="refStandar" class="wrapper style2 fade-up">
 						<div class="inner">
 							<h1>Instalar y Configurar Servidores de Minecraft</h1>
-							<h3>En construcción</h3>
-
+							<p>Descargar, configurar e instalar un Servidor de Minecraft en cualquier versión es mucho más sencillo de lo que crees.</p>
+							<p>En este caso, veremos cómo instalar uno vanilla, para uno modificado ver: To Be Continued</p>
+							<a class="wlink" href="mcServer.html">Página del tutorial</a>
 						
 							<!-- <h2>Get in touch</h2>
 							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
@@ -210,6 +201,23 @@
 							</div> -->
 						</div>
 					</section>
+<!-- Cuatro -->
+<section id="refStandar" class="wrapper style3 fade-up">
+<div class="inner">
+	<h1>Cómo funciona la librería Screen</h1>
+<p>Aprende lo básico de esta práctica librería que te permitirá tener barios procesos y "shells" abiertas al mismo tiempo</p>
+<a class="wlink" href="screen.html">Página del tutorial</a>
+</div>
+</section>
+
+<!-- Cinco -->
+<section id="refStandar" class="wrapper style2 fade-up">
+<div class="inner">
+	<h1>To be Continued</h1>
+<!-- <p>Aprende lo básico de esta práctica librería que te permitirá tener barios procesos y "shells" abiertas al mismo tiempo</p> -->
+<!-- <a class="wlink" href="screen.html">Página del tutorial</a> -->
+</div>
+</section>
 
 			</div>
 
@@ -223,6 +231,18 @@
 			</footer>
 
 		<!-- Scripts -->
+			<script src="superMenu.js"></script>
+			<script>
+				// Array con las frases (excluyendo "Welcome")
+				const items = [
+					"JS Bot",
+					"CV Virtual",
+					"MC Server",
+					"Librería Screen"
+				];
+				initializePage(items);
+			</script>
+
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>

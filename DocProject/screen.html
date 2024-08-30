@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Docu Luipy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul id ="menu"></ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Librería Screen</h1>
+							<p>La librería "screen" es una herramienta de gestión de sesiones en terminales Unix-like, como Linux. Su propósito principal es permitir a los usuarios manejar múltiples sesiones dentro de una única ventana de terminal. Aquí te detallo algunas de sus funcionalidades principales:<br/></p>
+							<ul class="actions">
+								<li><a href="#ref1" class="button scrolly">Vamos</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+<section id="refStandar" class="wrapper style2">
+    <div class="inner">
+    <h1>Funcionalidades principales</h1>
+    <ul>
+        <li><b>Multiplexión de terminales:</b> Divide una ventana de terminal en varias sesiones independientes.</li>
+        <li><b>Desconexión y reconexión:</b> Permite desconectar y volver a conectar sesiones sin perder el trabajo.</li>
+        <li><b>Gestión de sesiones:</b> Facilita la creación, eliminación y navegación entre múltiples sesiones.</li>
+        <li><b>Ejecución en segundo plano:</b> Ejecuta procesos en segundo plano mientras trabajas en otras tareas.</li>
+        <li><b>Persistencia de procesos:</b> Mantiene los procesos en ejecución incluso si te desconectas.</li>
+    </ul>
+    <section id="refStandar"></section>
+    <h1>Instalar la librería</h1>
+    <p>Para poder hacer uso de ella, por supuesto la tendremos que instalar.</p>
+    <pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+# Actualizar la lista de paquetes
+sudo apt update
+
+# Instalar en Ubuntu/Debian
+sudo apt install screen
+
+# Instalar en Hat/Fedora
+sudo dnf install screen
+    </code></pre>
+    <section id="refStandar"></section>
+    <h1>Comandos Básicos de 'screen'</h1>
+    <p>Los siguientes comandos se deberían de ejecutar en una terminal normal.</p>
+    <pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+# Crear una nueva sesión:
+screen
+
+# Nombrar una sesión al crearla
+screen -S nombreDeSesion
+
+# Listar las sesiones activas:
+screen -ls
+
+# Conectarse a una sesión existente:
+screen -r nombreDeSesion
+
+# Desconectar de una sesión (dejando la sesión en segundo plano):
+Combinación de teclas: Ctrl-a luego d (separador de sesión).
+
+# Forzar la terminación de una sesión desde fuera:
+screen -X -S nombre_de_sesion quit
+    </code></pre>
+<section id="refStandar"></section>
+<h1>Atajos de Teclas Comunes</h1>
+<ul>
+    <li><b>Ctrl-a c:</b> Crear una nueva ventana dentro de la sesión.</li>
+    <li><b>Ctrl-a n:</b> Ir a la siguiente ventana.</li>
+    <li><b>Ctrl-a p:</b> Ir a la ventana anterior.</li>
+    <li><b>Ctrl-a ":</b> Mostrar una lista de ventanas.</li>
+</ul>
+            </div>
+            </section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt" >
+				<div class="inner">
+					<ul class="menu" style="color: white;">
+						<li>&copy; Untitled. All rights reserved.</li><li>Plantilla creada por: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li><li><a href="site.ldeluipy.es" target="_blank">LdeLuipy®</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+        <script src="superMenu.js"></script>
+        <script>
+            // Array con las frases (excluyendo "Welcome")
+            const items = [
+                "Resumen",
+                "Instalar librería",
+                "Comandos más útiles"
+            ];
+            initializePage(items);
+        </script>
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-json.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+
+	</body>
+</html>
