@@ -30,8 +30,8 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>Instalar Minecraft Server</h1>
-							<p>Con esta guía podrás crear tu propio servidor Java al que cualquier usuario podrá conectarse, si deseas saber cómo habilitar el servidor para jugadores de Bedrock, ve a: To Be Continued</p>
+							<h1>Instalar Minecraft Server J-B</h1>
+							<p>Con esta guía podrás crear tu propio servidor Java-Bedrock al que cualquier usuario podrá conectarse.</p>
 							<ul class="actions">
 								<li><a href="#ref1" class="button scrolly">Vamos</a></li>
 							</ul>
@@ -44,25 +44,30 @@
     <h1>Resumen</h1>
     <p>Para disponer de un servidor de Minecraft, necesitarás una máquina con acceso a internet y de la cual puedas modificar sus puertos de acceso y sus protocolos. <br> Estos puertos permitirán a las peticiones realizadas por los clientes llegar al servidor y salir de vuelta. Esta guía se realizará en Ubuntu.</p>
     <section id="refStandar"></section>
-    <h2>Dependencias y Recomendaciones de Hardware</h2>
-    <p>Tener en cuenta tus objetivos es esencial para esta parte. Conocer el número de jugadores activos que tendrá el servidor es clave. Por lo tanto, utilizaremos estas listas para proporcionar recomendaciones de hardware basadas en el número de jugadores que esperas en tu servidor.</p>
+    <h2>Hardware</h2>
+    <p>Tener en cuenta tus objetivos es esencial para esta parte. Conocer el número de jugadores activos que tendrá el servidor es clave. A continuación te recomendaré unos estándares que deberás coger con pinzas, ya que no tengo ni papa de hardware, Minecraft necesita sobretodo una buena CPU y varios GB de RAM</p>
+    <h3>¡Importante!</h3>
+    <p>Los siguientes valores de RAM no corresponden a la cantidad instalada en la máquina, sino a la cantidad que deberás reservar para su uso. Por ejemplo, si necesitas 6 GB de RAM para tu proyecto, no adquieras una máquina con solo 6 GB de RAM, ya que el sistema operativo necesita memoria adicional para funcionar correctamente. Para un sistema operativo ligero, reserva al menos 2 GB de RAM. Por lo tanto, si necesitas 6 GB para Minecraft, te recomendamos adquirir una máquina con al menos 8 GB de RAM.</p>
     <ol>
         <li>
             <h2>Para Servidores de 1-10 Jugadores</h2>
             <ul>
                 <li>
-                    <strong>Minecraft Versión: 1.20+ (Versión reciente)</strong>
+                    <strong>Minecraft versión 1.18</strong>
                     <ul>
-                        <li><strong>RAM:</strong> 4-8 GB</li>
-                        <li><strong>CPU:</strong> Intel Core i3-10100 o AMD Ryzen 3 3200G</li>
+                        <li><strong>RAM:</strong> 4-6 GB</li>
+                        <li><strong>CPU:</strong> Media potencia</li>
+                        <li><strong>Storage:</strong> 10-50GB</li>
                     </ul>
+                    <p>Si tu objetivo es jugar en una de las últimas versiones de Minecraft pero con no demasiados jugadores, un barémos de 5GB será lo recomendable, el almacenamiento dependerá de cuantos backups quieras hacer. Por supuesto, estos pueden ser externos, por lo que no necesitarías más almacenamiento en la máquina, por lo que unos pocos GB de almacenamiento ya serían suficientes para mantener el servidor. Si pretendes hacer un servidor extenso, no escatimes en almacenamiento o cosas turbias ocurrirán.</p>
                 </li>
                 <li>
                     <strong>Minecraft Versión: 1.17 (Versiones anteriores)</strong>
                     <ul>
                         <li><strong>RAM:</strong> 2-6 GB</li>
-                        <li><strong>CPU:</strong> Intel Core i3-9100 o AMD Ryzen 3 2200G</li>
+                        <li><strong>CPU:</strong> Media potencia</li>
                     </ul>
+                    <p>Las versiones anteriores a la 1.18 consumen muchos menos recursos, sobretodo RAM y almacenamiento.</p>
                 </li>
             </ul>
         </li>
@@ -70,17 +75,18 @@
             <h2>Para Servidores de 10-30 Jugadores</h2>
             <ul>
                 <li>
-                    <strong>Minecraft Versión: 1.20+ (Versión reciente)</strong>
+                    <strong>Minecraft Versión: 1.18+ (Versión reciente)</strong>
                     <ul>
                         <li><strong>RAM:</strong> 6-10 GB</li>
-                        <li><strong>CPU:</strong> Intel Core i5-10400 o AMD Ryzen 5 3600</li>
+                        <li><strong>CPU:</strong> Media-Alta Potencia</li>
                     </ul>
+                    <p>Más jugadores se traduce en una mayor cantidad de RAM.</p>
                 </li>
                 <li>
                     <strong>Minecraft Versión: 1.17 (Versiones anteriores)</strong>
                     <ul>
-                        <li><strong>RAM:</strong> 4-8 GB</li>
-                        <li><strong>CPU:</strong> Intel Core i5-9400 o AMD Ryzen 5 2600</li>
+                        <li><strong>RAM:</strong> 6-8 GB</li>
+                        <li><strong>CPU:</strong> Media-Alta Potencia</li>
                     </ul>
                 </li>
             </ul>
@@ -89,17 +95,18 @@
             <h2>Para Servidores de 30-60 Jugadores</h2>
             <ul>
                 <li>
-                    <strong>Minecraft Versión: 1.20+ (Versión reciente)</strong>
+                    <strong>Minecraft Versión: 1.18+ (Versión reciente)</strong>
                     <ul>
                         <li><strong>RAM:</strong> 10-12 GB</li>
-                        <li><strong>CPU:</strong> Intel Core i7-10700K o AMD Ryzen 7 3700X</li>
+                        <li><strong>CPU:</strong> Media-Alta Potencia</li>
                     </ul>
                 </li>
+                <p>Como ya podrás haber comprobado, no tengo ni idea de las especificaciones que realmente necesita un servidor, tú metele RAM</p>
                 <li>
                     <strong>Minecraft Versión: 1.17 (Versiones anteriores)</strong>
                     <ul>
                         <li><strong>RAM:</strong> 6-10 GB</li>
-                        <li><strong>CPU:</strong> Intel Core i7-9700K o AMD Ryzen 7 2700X</li>
+                        <li><strong>CPU:</strong> Media-Alta Potencia</li>
                     </ul>
                 </li>
             </ul>
@@ -108,11 +115,105 @@
     <p>Ante la duda, ni caso, tú metele una buena CPU y to la RAM que dé el bicho.</p>
     
     <section id="refStandar"></section>
-    <h1>Dependencias Software</h1>
-    <p>Podríamos hacer nuestro servidor full vanilla, pero es mucho mejor utilizar Software que mejorará muchisimo el rendimiento de nuestro servidor. Por ello, seleccionaremos... Sigo otro día</p>
+    <h1>Software</h1>
+    <p>Podríamos hacer nuestro servidor full vanilla, pero es mucho mejor utilizar Software que mejoren el rendimiento de nuestro servidor. Por ello, elegiremos el Software que más nos convenga, en este caso <b>Paper</b>, pero podrías utilizar, <b>Spigot, Bukkit</b>.. o lo que prefieras. </p>
+    <p>Si en tu caso prefieres hacer un full vanilla, o no encuentras Softwares de terceros para la versión que quieres lanzar, como una Snapshot, puedes conseguir el lanzador de cualquier versión directamente en el Launcher Oficial de Minecraft. Para ello accede a Instalaciones, presiona en crear una nueva instalacción, selecciona la versión que desees y presiona en <b>SERVER</b>, esto te descargará el .jar que necesitaremos para lanzar el servidor.</p>
+    <p>En caso de Paper u otros Softwares, accede a su página web oficial y descarga el instalador que necesites.</p>
+    <p>Una vez tengamos el <b>.jar</b>, ya sea vanilla o de terceros, colócalo en el directorio/carpeta donde desees que se lance el servidor. Si estás en un entorno de terminal, puedes descargar el .jar directamente en este directorio utilizando un comando como el siguiente:</p>
     <pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
-#
+# Comando wget en Ubutnu:
+wget -P /ruta/al/directorio https://ejemplo.com/archivo.jar
+
+#Recuerda cambiar la ruta y la URL
     </code></pre>
+    <p>Ahora tocará lanzar el <b>.jar</b> para que automáticamente se nos creen las dependencias, para ello:</p>
+    <pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+# Lanzar .jar
+java -jar archivo.jar
+
+#Recuerda cambiar el nombre del archivo
+    </code></pre>
+    <p>Si todo va como esperabamos, el servidor se lanzará y se cerrará dando un error de EULA, pero habrá creado los archivos necesarios. Ejemplo:</p>
+    <img class="img1" src="images/launchJar.png" alt="Lanzando el .jar">
+    <p>Gracias al .jar se nos habrán creado 5 directorios y 2 archivos de texto. Lo primero será habilitar el EULA, con lo que estaremos aceptando los términos y condiciones de Minecraft. Será tan sencillo como abrir el archivo y cambiar <b>"eula=false"</b> por <b>"eula=true"</b>.</p>
+    <section id="refStandar"></section>
+    <h1>Configuraciones básicas</h1>
+    <p>Ya podríamos lanzar el servidor y jugar, pero es recomendable editar la configuración del servidor para una mejor experiencia de juego. Para ello, abriremos el archivo server.propierties</p>
+    <p>Aquí encontraremos unas 60 configuraciones báscias, a continuación te mostraré mis recomendaciones, el orden de las directrices puede cambiar y NO añadas más directrices, sólo edita las existentes:</p>
+    <pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+# Si el servidor cuenta con suficiente RAM, aumentar el número de Chunks de Render hasta 16
+view-distance=16
+
+# Siempre empezaremos con una dificultar en "easy" pero puedes cambiarla aquí
+difficulty=hard
+
+# Si necesitas utilizar Blockes" de comandos:
+enable-command-block=true
+
+# Si necesitas una whitelist
+enforce-whitelist=true
+
+# En qué modo de juego aparecerán los jugadores?
+gamemode=survival
+
+# Servidor Hardcore?
+hardcore=true
+
+# Si quieres que tu mundo tenga una semilla en concreto:
+level-seed=NúMEROS
+
+# Especificar el máximo de jugadores
+max-players=20
+
+# Tamaño máximo de jugadores
+max-world-size=29999984
+# Aunque es mejor utilizar comandos como setworldborder
+
+# Descripción del servidor
+motd=Servidor de Minecraft
+# Evita utilizar carácteres raros como acentos
+
+# Servidor premium/nopremium? Colóca "False" si es NoPremium
+online-mode=false
+# Esta opción es peligrosa, ya que de esta manera estás diciendole al Servidor
+# que no compruebe si el jugador es quien dice ser, por lo que cualqueira podría entrar
+# con la cuenta de otro jugador, recomendable instalar plugins de autenticación
+
+# Fuego amigo
+pvp=true
+
+# Si necesitas editar el puerto y la IP del servidor, ante la duda dejar como estaba
+server-ip=
+server-port=25565
+
+# Radio de blockes" que NO se podrán romper en el Spawn del mundo en survival
+spawn-protection=16
+    </code></pre>
+    <section id="refStandar"></section>
+    <h2>Lanzar Servidor</h2>
+    <p>Ya es hora de lanzar nuestro servidor y poder jugar en él, para ello utilizaremos este comando, es imporante lanzarlo estando en el mismo directorio que el archivo, sino el eula puede dar error:</p>
+    <pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
+# Lanzar el .jar
+java -Xms4G -Xmx8G -jar nombreDelArchivo.jar
+    </code></pre>
+    <p>Puedes editar los prámetros de <b>-Xms y -Xmx</b> para especificar la RAM mínima que utilizará el servidor y el máximo respectivamente. Recuerda NO saturar al sistema operativo, dejando 1 o 2 GBs libres del a máquina.</p>
+    <p>Al lanzar el .jar, estarémos "conviertiendo" la shell en una consola del servidor, por lo que no podrás cerrar esta ventana y todo el log aparecerá por aquí, si deseas poder cerrar la ventana, utiliza librerías como "screen".</p>
+    <p>Si todo va bien, ya podrás acceder al servidor utilizando la IP pública de la máquina y el puerto default (25565) en caso de que nos lo pida.</p>
+    <p>Si ha habido algún error, aparecerá el culpable en la misma consola.</p>
+    <img class="img1" src="images/serverList1.png" alt="Lista de servidores">
+    <img class="img1" src="images/inServer1.png" alt="Avatar dentro del Servidor">
+    <section id="refStandar"></section>
+    <h1>Plugins</h1>
+    <p>Dividiremos esta parte en 2 secciones, plugins recomendados y plugins para habilitar a los jugadores de Bedrock</p>
+    <h2>Plugins Recomendados</h2>
+    <p>A continuación veremos X plugins que yo mismo instalaré para mi servidor NoPremium:</p>
+    <ul>
+        <li><b>Essentials:</b>Un plugin esencial dependiente de otros que añade infinidad de comandos, y configuraciones.</li>
+        <li><b>GriefPrevention:</b> Uno de los mejores, configurables y más simples plugins para que los usuarios protejan sus construcciones, o diseñen epicas granjas.</li>
+        <li><b>Vault:</b> Necesario para incorporar entre otras cosas, una moneda en tu servidor, necesario para el plugin anterior</li>
+        <li><b>nLogin:</b> Esto o cualquier otro plugin para autenticarse en caso de servidor NoPremium</li>
+        <li><b>SkinRestorer:</b> Algo indispensable para no ver puro Steven y Alex en servidores NoPremium.</li>
+    </ul>
 
             </div>
             </section>
@@ -133,8 +234,11 @@
             // Array con las frases (excluyendo "Welcome")
             const items = [
                 "Resumen",
-                "Dependencias y Recomendaciones de Hardware",
-                "Dependencias Software",
+                "Hardware",
+                "Software",
+                "Configuración",
+                "Lanzar Server",
+                "Plugins"
             ];
             initializePage(items);
         </script>
