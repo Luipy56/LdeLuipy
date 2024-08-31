@@ -43,8 +43,10 @@
     <div class="inner">
     <h1>Resumen</h1>
     <p>Para disponer de un servidor de Minecraft, necesitarás una máquina con acceso a internet y de la cual puedas modificar sus puertos de acceso y sus protocolos. <br> Estos puertos permitirán a las peticiones realizadas por los clientes llegar al servidor y salir de vuelta. Esta guía se realizará en Ubuntu.</p>
+    <h3>Puertos</h3>
+    <p>Respecto a los puertos, si tu máquina está en local, es decir, en tu casa, teberás abrir los puertos necesarios en el Router, en caso de ser una máquina externa, comprada/alquilada, tendrás que habilitarlos por software, si es necesario, iptables, proxy etc y/o en su respectivo panel de puertos. Lo mejor será abrir los purtos bidireccionales en modo tanto UTP como TCP. Para saber más sobre puertos ver: To Be Continued</p>
     <section id="refStandar"></section>
-    <h2>Hardware</h2>
+    <h1>Hardware</h1>
     <p>Tener en cuenta tus objetivos es esencial para esta parte. Conocer el número de jugadores activos que tendrá el servidor es clave. A continuación te recomendaré unos estándares que deberás coger con pinzas, ya que no tengo ni papa de hardware, Minecraft necesita sobretodo una buena CPU y varios GB de RAM</p>
     <h3>¡Importante!</h3>
     <p>Los siguientes valores de RAM no corresponden a la cantidad instalada en la máquina, sino a la cantidad que deberás reservar para su uso. Por ejemplo, si necesitas 6 GB de RAM para tu proyecto, no adquieras una máquina con solo 6 GB de RAM, ya que el sistema operativo necesita memoria adicional para funcionar correctamente. Para un sistema operativo ligero, reserva al menos 2 GB de RAM. Por lo tanto, si necesitas 6 GB para Minecraft, te recomendamos adquirir una máquina con al menos 8 GB de RAM.</p>
@@ -101,7 +103,7 @@
                         <li><strong>CPU:</strong> Media-Alta Potencia</li>
                     </ul>
                 </li>
-                <p>Como ya podrás haber comprobado, no tengo ni idea de las especificaciones que realmente necesita un servidor, tú metele RAM</p>
+                <p>Como ya podrás haber comprobado, no tengo ni idea de las especificaciones que realmente necesita un servidor, tú métele RAM</p>
                 <li>
                     <strong>Minecraft Versión: 1.17 (Versiones anteriores)</strong>
                     <ul>
@@ -196,7 +198,7 @@ spawn-protection=16
 # Lanzar el .jar
 java -Xms4G -Xmx8G -jar nombreDelArchivo.jar
     </code></pre>
-    <p>Puedes editar los prámetros de <b>-Xms y -Xmx</b> para especificar la RAM mínima que utilizará el servidor y el máximo respectivamente. Recuerda NO saturar al sistema operativo, dejando 1 o 2 GBs libres del a máquina.</p>
+    <p>Puedes editar los prámetros de <b>-Xms y -Xmx</b> para especificar la RAM mínima que utilizará el servidor y el máximo respectivamente. Recuerda NO saturar al sistema operativo, dejando 1 o 2 GBs libres de la máquina.</p>
     <p>Al lanzar el .jar, estarémos "conviertiendo" la shell en una consola del servidor, por lo que no podrás cerrar esta ventana y todo el log aparecerá por aquí, si deseas poder cerrar la ventana, utiliza librerías como "screen".</p>
     <p>Si todo va bien, ya podrás acceder al servidor utilizando la IP pública de la máquina y el puerto default (25565) en caso de que nos lo pida.</p>
     <p>Si ha habido algún error, aparecerá el culpable en la misma consola.</p>
@@ -208,12 +210,13 @@ java -Xms4G -Xmx8G -jar nombreDelArchivo.jar
     <h2>Plugins Recomendados</h2>
     <p>A continuación veremos X plugins que yo mismo instalaré para mi servidor NoPremium:</p>
     <ul>
-        <li><b>Essentials:</b>Un plugin esencial dependiente de otros que añade infinidad de comandos, y configuraciones.</li>
+        <li><b>Essentials:</b> Un plugin esencial dependiente de otros, añade infinidad de comandos, y configuraciones.</li>
         <li><b>GriefPrevention:</b> Uno de los mejores, configurables y más simples plugins para que los usuarios protejan sus construcciones, o diseñen epicas granjas.</li>
         <li><b>Vault:</b> Necesario para incorporar entre otras cosas, una moneda en tu servidor, necesario para el plugin anterior</li>
         <li><b>nLogin:</b> Esto o cualquier otro plugin para autenticarse en caso de servidor NoPremium</li>
         <li><b>SkinRestorer:</b> Algo indispensable para no ver puro Steven y Alex en servidores NoPremium.</li>
     </ul>
+    <h2>Plugins para habilitar Bedrock</h2>
 
             </div>
             </section>
