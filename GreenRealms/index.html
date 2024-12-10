@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Green Realm</title>
+  </head>
+
+<!-- Al principio de cada partida, o de la primera vez que se entra a la Web, o incluso al perder, estaría bien que apareciera la frase:
+La tecnología nos brinda un nivel de comodidad y abundancia sin precedentes, aunque todavía no hemos aprendido a alcanzarlos sin destruir nuestra ecosfera. -->
+<!-- Posibilidad de desactivar las enseñanzas -->
+<!-- Eliminar las recompensas -->
+<!-- He visto que hay muchas cartas sobre reciclaje -->
+
+  <body>
+    <div class="reigns">
+      <div class="stats">
+        <div class="stat">
+          <img src="icons/polution.svg" alt="" />
+          <div class="progress-container">
+            <div class="progress polucion"></div>
+          </div>
+        </div>
+        <div class="stat">
+          <img src="icons/reciclaje.svg" alt="" />
+          <div class="progress-container">
+            <div class="progress reciclaje"></div>
+          </div>
+        </div>
+        <div class="stat">
+          <img src="icons/EE.svg" alt="" />
+          <div class="progress-container">
+            <div class="progress EE"></div>
+          </div>
+        </div>
+        <div class="stat">
+          <img src="icons/SS.svg" alt="" />
+          <div class="progress-container">
+            <div class="progress SS"></div>
+          </div>
+        </div>
+        <div class="stat">
+          <img src="icons/capital.svg" alt="" />
+          <div class="progress-container">
+            <div class="progress capital"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="description"></div>
+        <div class="textOption"></div>
+        <div class="deck">
+          <div class="square bottom"></div>
+          <div class="square top">
+            <button class="left">
+              <div class="leftStats">
+                <div class="item">
+                  <img src="icons/polution.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+                <div class="item">
+                  <img src="icons/reciclaje.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+                <div class="item">
+                  <img src="icons/EE.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+                <div class="item">
+                  <img src="icons/SS.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+                <div class="item">
+                  <img src="icons/capital.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+              </div>
+            </button>
+            <button class="right">
+              <div class="rightStats">
+                <div class="item">
+                  <img src="icons/polution.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+                <div class="item">
+                  <img src="icons/reciclaje.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+                <div class="item">
+                  <img src="icons/EE.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+                <div class="item">
+                  <img src="icons/SS.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+                <div class="item">
+                  <img src="icons/capital.svg" alt="" />
+                  <span class="moreorless"></span>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+        <h1 class="title">Reducción del uso de energía en CPDs</h1>
+      </div>
+
+      <div class="info"></div>
+    </div>
+
+    <div
+      class="div"
+      style="position: absolute; right: 20px; bottom: 20px; font-size: 6px"
+    >
+      Scripted estuvo aqui
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
