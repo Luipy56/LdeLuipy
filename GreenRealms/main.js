@@ -1,6 +1,9 @@
 const description = document.querySelector(".description");
-const title = document.querySelector(".title");
+const cardTitle = document.querySelector(".cardTitle");
 const background = document.querySelector(".top");
+
+const textBox = document.querySelector(".text-box");
+const extra = document.querySelector(".extra");
 
 const btnLeft = document.querySelector(".left");
 const btnRight = document.querySelector(".right");
@@ -9,34 +12,74 @@ const textOption = document.querySelector(".textOption");
 const leftStats = document.querySelector(".leftStats");
 const rightStats = document.querySelector(".rightStats");
 
+const pause = document.querySelector(".pause");
+const loadTitle = document.querySelector(".loadTitle");
+const start = document.querySelector(".start");
+
 const metrics = {
-  polution: { value: 5, HTML: document.querySelector(".polucion") },
-  reciclaje: { value: 5, HTML: document.querySelector(".reciclaje") },
-  EE: { value: 5, HTML: document.querySelector(".EE") },
-  SS: { value: 5, HTML: document.querySelector(".SS") },
-  capital: { value: 5, HTML: document.querySelector(".capital") },
+  polution: {
+    value: 15,
+    HTML: document.querySelector(".polucion"),
+    endText: "You're a monster who destroyed the earth",
+  },
+  reciclaje: {
+    value: 15,
+    HTML: document.querySelector(".reciclaje"),
+    endText: "You're surrounded by trash",
+  },
+  EE: {
+    value: 15,
+    HTML: document.querySelector(".EE"),
+    endText: "You consumed all the sources and the planet is gonna implode",
+  },
+  SS: {
+    value: 15,
+    HTML: document.querySelector(".SS"),
+    endText: "People throw stones at you (they brought back the guillotine)",
+  },
+  capital: {
+    value: 15,
+    HTML: document.querySelector(".capital"),
+    endText: "You're broke.",
+  },
 };
 
 let cards = [];
 let index = 0;
+let fin = true;
 
-const mezclarCards = (arr) => {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+const gameOver = () => {
+  Object.entries(metrics).forEach(([key, metric]) => {
+    if (fin) {
+      pause.style.display = "flex";
+      return;
+    }
 
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-
-  return arr;
+    if (
+      (key === "polution" && (metric.value * 100) / 30 >= 100) ||
+      metric.value <= 0
+    ) {
+      pause.textContent = metric.endText;
+      fin = true;
+    }
+  });
 };
 
-const ponerElSimboloMasOEnSuDefectoElSimboloMenosOSinoSeDesaparese = (
-  items = []
-) => {
+const mezclarCards = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+
+  return array;
+};
+
+const moreOrLess = (items = [], statIndex = 0) => {
   items.map((x, i) => {
     x.style.opacity = "1";
     const moreorless = x.querySelector(".moreorless");
-    const impactNumber = cards[index].stats[1].impacts[i].impact;
+    const impactNumber = cards[index].stats[statIndex].impacts[i].impact;
 
     if (impactNumber === 0) x.style.opacity = "0";
 
@@ -44,35 +87,9 @@ const ponerElSimboloMasOEnSuDefectoElSimboloMenosOSinoSeDesaparese = (
   });
 };
 
-const pintarCard = () => {
-  description.textContent = cards[index].description;
-  title.textContent = cards[index].title;
-
-  const rightItems = [...rightStats.querySelectorAll(".item")];
-  const leftItems = [...leftStats.querySelectorAll(".item")];
-
-  background.style.backgroundImage = `url(${cards[index].img})`;
-
-  ponerElSimboloMasOEnSuDefectoElSimboloMenosOSinoSeDesaparese(rightItems);
-  ponerElSimboloMasOEnSuDefectoElSimboloMenosOSinoSeDesaparese(leftItems);
-
-  index++;
-};
-
 const actualizarStatsHTML = () => {
   Object.keys(metrics).map((key) => {
-    metrics[key].HTML.style.height = `${(metrics[key].value * 100) / 15}%`;
-
-    //menu start & menu end
-    //en cuyo caso de que se acabe el array, te pasaste el juego crack
-
-    /*
-    si la polucion llega al 100% = "you're a monster who destroyed the earth, Att Godzilla";
-    si el reciclaje llega a 0 = "You're surrounded by trash (like you)";
-    si la EE llega a 0 = "";
-    si la SS llega a 0 = "People throw stones at you (people brought back the Guillotine (frenchs are horny))"
-    si la capita llega a 0 = "you're broke as shit";
-    */
+    metrics[key].HTML.style.height = `${(metrics[key].value * 100) / 30}%`;
   });
 };
 
@@ -84,10 +101,48 @@ const sumarStats = (statsIndex) => {
   });
 
   actualizarStatsHTML();
+
+  index++;
 };
 
+const pintarCard = () => {
+  description.textContent = cards[index].description;
+  cardTitle.textContent = cards[index].title;
+
+  if (cards[index].extra) {
+    extra.style.display = "flex";
+    textBox.textContent = cards[index].extra;
+  } else {
+    extra.style.display = "none";
+  }
+
+  background.style.backgroundImage = `url(${cards[index].img})`;
+
+  const rightItems = [...rightStats.querySelectorAll(".item")];
+  const leftItems = [...leftStats.querySelectorAll(".item")];
+
+  moreOrLess(rightItems, 1);
+  moreOrLess(leftItems, 0);
+  gameOver();
+};
+
+btnLeft.addEventListener("mouseenter", () => {
+  textOption.textContent = cards[index].stats[0].statText;
+});
+
+btnLeft.addEventListener("mouseleave", () => {
+  textOption.textContent = "";
+});
+
+btnRight.addEventListener("mouseenter", () => {
+  textOption.textContent = cards[index].stats[1].statText;
+});
+
+btnRight.addEventListener("mouseleave", () => {
+  textOption.textContent = "";
+});
+
 btnRight.addEventListener("click", () => {
-  console.log("CLICK");
   sumarStats(1);
   pintarCard();
 });
@@ -97,6 +152,11 @@ btnLeft.addEventListener("click", () => {
   pintarCard();
 });
 
+start.addEventListener("click", () => {
+  fin = false;
+  pause.style.display = "none";
+});
+
 fetch("cards.json")
   .then((response) => response.json())
   .then((data) => {
@@ -104,6 +164,3 @@ fetch("cards.json")
     pintarCard();
   })
   .catch(console.error);
-
-// Al principio de cada partida, o de la primera vez que se entra a la Web, o incluso al perder, estaría bien que apareciera la frase:
-//La tecnología nos brinda un nivel de comodidad y abundancia sin precedentes, aunque todavía no hemos aprendido a alcanzarlos sin destruir nuestra ecosfera.

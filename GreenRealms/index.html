@@ -7,13 +7,19 @@
     <title>Green Realm</title>
   </head>
 
-<!-- Al principio de cada partida, o de la primera vez que se entra a la Web, o incluso al perder, estaría bien que apareciera la frase:
-La tecnología nos brinda un nivel de comodidad y abundancia sin precedentes, aunque todavía no hemos aprendido a alcanzarlos sin destruir nuestra ecosfera. -->
-<!-- Posibilidad de desactivar las enseñanzas -->
-<!-- Eliminar las recompensas -->
-<!-- He visto que hay muchas cartas sobre reciclaje -->
-
   <body>
+    <div class="pause">
+      <div class="loadTitle">
+        <span>
+          La tecnología nos brinda un nivel de comodidad y abundancia sin
+          precedentes...
+        </span>
+        <span>Solo nos falta saber usarla sin destruirnos</span>
+      </div>
+
+      <button class="start">Empezar</button>
+    </div>
+
     <div class="reigns">
       <div class="stats">
         <div class="stat">
@@ -54,7 +60,7 @@ La tecnología nos brinda un nivel de comodidad y abundancia sin precedentes, au
         <div class="deck">
           <div class="square bottom"></div>
           <div class="square top">
-            <button class="left">
+            <button class="button left">
               <div class="leftStats">
                 <div class="item">
                   <img src="icons/polution.svg" alt="" />
@@ -78,7 +84,7 @@ La tecnología nos brinda un nivel de comodidad y abundancia sin precedentes, au
                 </div>
               </div>
             </button>
-            <button class="right">
+            <button class="button right">
               <div class="rightStats">
                 <div class="item">
                   <img src="icons/polution.svg" alt="" />
@@ -104,17 +110,17 @@ La tecnología nos brinda un nivel de comodidad y abundancia sin precedentes, au
             </button>
           </div>
         </div>
-        <h1 class="title">Reducción del uso de energía en CPDs</h1>
+        <h1 class="cardTitle"></h1>
       </div>
 
       <div class="info"></div>
     </div>
 
-    <div
-      class="div"
-      style="position: absolute; right: 20px; bottom: 20px; font-size: 6px"
-    >
-      Scripted estuvo aqui
+    <div class="extra">
+      <div class="box">
+        <div class="text-box"></div>
+      </div>
+      <img src="icons/ElBorracho.png" class="avatar" alt="" />
     </div>
 
     <script src="main.js"></script>

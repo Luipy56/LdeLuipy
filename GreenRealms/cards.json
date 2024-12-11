@@ -73,7 +73,7 @@
       "extra": "En países como Dinamarca, donde el uso de la bicicleta es parte de la cultura diaria, las empresas a menudo ofrecen beneficios económicos o estacionamientos exclusivos para bicicletas. Un ejemplo real es Google, que incentiva a sus empleados a usar transporte público con subsidios, demostrando cómo estas prácticas pueden mejorar la sostenibilidad y fomentar hábitos más ecológicos.",
       "title": "Incentivos para empleados para reducir la huella de carbono",
       "description": "Tus empleados sugieren la implementación de un programa de incentivos para quienes utilicen métodos de transporte sostenibles (bicicleta, transporte público, etc.) para reducir la huella de carbono.",
-      "img": "images/a.webp",
+      "img": "images/b.webp",
       "stats": [
         {
           "statText": "Implementar el programa de incentivos",
@@ -133,7 +133,7 @@
       "extra": "El reciclaje de plásticos llega incluso a la industria de la moda, donde empresas como Adidas han desarrollado zapatillas hechas con plásticos reciclados del océano. Además, el uso de materiales como el aluminio reciclado, que requiere un 95% menos energía que producirlo desde cero, ha sido adoptado por empresas como Coca-Cola en sus envases, demostrando que, a pesar de los costos adicionales, estos cambios son beneficiosos a largo plazo para el medio ambiente.",
       "title": "Uso de materiales reciclados en la producción",
       "description": "La industria está avanzando hacia la producción sostenible mediante el uso de materiales reciclados. Esto podría reducir tu impacto ambiental, pero implicaría costos adicionales.",
-      "img": "images/a.webp",
+      "img": "images/c.webp",
       "stats": [
         {
           "statText": "Cambiar a materiales reciclados",
@@ -193,7 +193,7 @@
       "extra": "Los créditos de carbono son certificados que representan una tonelada de CO2 que ha sido reducida o absorbida por proyectos ambientales, como la reforestación o energías renovables. Al comprar estos créditos, las empresas pueden compensar sus emisiones sin reducir directamente su producción, permitiéndoles seguir operando mientras contribuyen a la lucha contra el cambio climático.",
       "title": "Compra de créditos de carbono",
       "description": "Puedes reducir tu huella de carbono comprando créditos de carbono, lo que te permitiría seguir operando sin reducir las emisiones de CO2 de tus fábricas.",
-      "img": "images/a.webp",
+      "img": "images/d.webp",
       "stats": [
         {
           "statText": "Comprar créditos de carbono",
@@ -250,10 +250,10 @@
     {
       "id": 5,
       "category": "",
-      "extra": "",
+
       "title": "Protestas por la contaminación en la zona",
       "description": "La comunidad local está protestando debido a los altos niveles de contaminación generados por tus fábricas. Te exigen que tomes medidas inmediatas.",
-      "img": "images/a.webp",
+      "img": "images/e.webp",
       "stats": [
         {
           "statText": "Tomar medidas inmediatas para reducir la contaminación",
@@ -297,7 +297,7 @@
             },
             {
               "key": "SS",
-              "impact": -4
+              "impact": -3
             },
             {
               "key": "capital",
@@ -313,7 +313,7 @@
       "extra": "Empresas como Climeworks ya utilizan máquinas que capturan CO2 del aire, que luego puede ser almacenado o reutilizado para la producción de combustibles sintéticos.",
       "title": "Implementación de filtros de CO2 en las fábricas",
       "description": "Tus fábricas están emitiendo altos niveles de CO2, lo que ha generado preocupación tanto en la comunidad como en organismos internacionales. La UE te ha advertido que si no reduces tus emisiones, enfrentarás sanciones.",
-      "img": "images/a.webp",
+      "img": "images/f.webp",
       "stats": [
         {
           "statText": "Instalar filtros",
@@ -370,10 +370,10 @@
     {
       "id": 7,
       "category": "",
-      "extra": "",
+
       "title": "Implementación de Energía Solar en las Fábricas",
       "description": "Tienes la oportunidad de instalar paneles solares en las fábricas para reducir el uso de energía convencional y las emisiones. La inversión inicial es alta, pero a largo plazo reduciría costos y emisiones.",
-      "img": "images/a.webp",
+      "img": "images/g.webp",
       "stats": [
         {
           "statText": "Invertir en energía solar",
@@ -433,7 +433,7 @@
       "extra": "Empresas como Toyota ya han adoptado sistemas de reciclaje interno, donde materiales como plásticos, metales y papel son reutilizados en la misma cadena de producción. Aunque la inversión inicial puede ser alta, el ahorro a largo plazo hacen que estos programas sean beneficiosos tanto para el medio ambiente como para las finanzas de la empresa.",
       "title": "Programa de Reciclaje en las Fábricas",
       "description": "Tus fábricas generan una gran cantidad de residuos no reciclados. Un programa de reciclaje interno puede ayudar a mitigar este impacto, aunque requerirá una inversión inicial.",
-      "img": "images/a.webp",
+      "img": "images/h.webp",
       "stats": [
         {
           "statText": "Implementar el programa de reciclaje",
@@ -493,7 +493,7 @@
       "extra": "El teletrabajo en empresas como Twitter han demostrado ser una estrategia efectiva para reducir las emisiones asociadas al transporte y que mejora la satisfacción laboral al ofrecer mayor flexibilidad.",
       "title": "Incentivar el Teletrabajo para Reducir Emisiones",
       "description": "Se propone incentivar el teletrabajo para reducir las emisiones generadas por los desplazamientos de los empleados. Esto también podría aumentar la SS, pero tiene un impacto en la productividad.",
-      "img": "images/a.webp",
+      "img": "images/i.webp",
       "stats": [
         {
           "statText": "Incentivar el teletrabajo",
@@ -550,10 +550,10 @@
     {
       "id": 10,
       "category": "",
-      "extra": "",
+
       "title": "Reducción del Uso de Plásticos en la Producción",
       "description": "Se te ha presentado una propuesta para reducir el uso de plásticos no reciclables en tu cadena de producción. La implementación podría aumentar los costos iniciales, pero podría mejorar la imagen de la empresa y reducir la contaminación.",
-      "img": "images/a.webp",
+      "img": "images/j.webp",
       "stats": [
         {
           "statText": "Reducir el uso de plásticos",
@@ -613,7 +613,7 @@
       "extra": "Lanzar una campaña así es una estrategia poderosa para educar a la comunidad y mejorar la imagen de la empresa. Iniciativas como la campaña 'Reduce, Reuse, Recycle' de Coca-Cola han demostrado cómo estas acciones pueden fomentar un cambio social positivo mientras fortalecen el vínculo con los consumidores.",
       "title": "Lanzar una Campaña de Sensibilización Ambiental",
       "description": "Tu departamento de relaciones públicas sugiere lanzar una campaña de sensibilización ambiental para mejorar la imagen de la empresa y contribuir al cambio social. Sin embargo, la campaña podría requerir una inversión considerable.",
-      "img": "images/a.webp",
+      "img": "images/k.webp",
       "stats": [
         {
           "statText": "Lanzar la campaña",
@@ -670,10 +670,10 @@
     {
       "id": 12,
       "category": "",
-      "extra": "",
+
       "title": "Formar una Alianza con Empresas Verdes",
       "description": "Se ha presentado la oportunidad de asociarte con empresas que priorizan la sostenibilidad. Esta colaboración podría mejorar la EE y la imagen social, pero tendría un costo financiero importante.",
-      "img": "images/a.webp",
+      "img": "images/l.webp",
       "stats": [
         {
           "statText": "Formar la alianza",
@@ -733,7 +733,7 @@
       "extra": "Reducir las horas de operación puede ser un paliativo temporal para disminuir la contaminación generada, pero no es una solución definitiva al problema. Para abordar las preocupaciones de la comunidad y mejorar la calidad del aire de forma sostenible, es fundamental la implementación de sistemas de filtrado avanzados o utilizar otras alternativas más limpias. ",
       "title": "Reducción de horas de operación",
       "description": "Las fábricas están generando una cantidad preocupante de polución y la comunidad local se ha quejado de los problemas de salud causados por la mala calidad del aire. La dirección sugiere reducir las horas de operación para mitigar la contaminación.",
-      "img": "images/a.webp",
+      "img": "images/m.webp",
       "stats": [
         {
           "statText": "Reducir las horas de operación",
@@ -793,7 +793,7 @@
       "extra": "Los CPDs generan una cantidad significativa de residuos electrónicos, como servidores obsoletos, discos duros y cables, que contienen materiales peligrosos como plomo y mercurio. Almacenar estos residuos puede ser una solución temporal, pero plantea riesgos ambientales. Implementar un sistema de reciclaje es una inversión clave para gestionar estos desechos de forma responsable, permitiendo recuperar materiales valiosos y reduciendo el impacto ambiental.",
       "title": "Almacenamiento de residuos electrónicos",
       "description": "Tus CPDs están generando una gran cantidad de residuos electrónicos. Podrías invertir en un sistema de reciclaje de e-waste o simplemente almacenar los residuos por el momento, lo que podría resultar en problemas futuros.",
-      "img": "images/a.webp",
+      "img": "images/n.webp",
       "stats": [
         {
           "statText": "Iniciar un programa de reciclaje electrónico",
@@ -853,7 +853,7 @@
       "extra": "Un incendio en un CPD puede ser devastador para el medio ambiente. Estos centros contienen grandes cantidades de materiales plásticos, químicos y componentes electrónicos que, al quemarse, liberan gases tóxicos como dioxinas y furanos, que contaminan el aire y afectan la salud humana y animal. Además, los sistemas de refrigeración y las baterías de respaldo pueden derramar sustancias peligrosas al suelo y al agua, exacerbando el daño ambiental.",
       "title": "Incendio en un CPD",
       "description": "Un incendio ha destruido uno de tus Centros de Procesamiento de Datos, afectando la capacidad operativa y el acceso a datos importantes.",
-      "img": "images/a.webp",
+      "img": "images/o.webp",
       "stats": [
         {
           "statText": "No hacer nada, tenemos redundancia en otros CPDs",
@@ -913,7 +913,7 @@
       "extra": "Un derrame de residuos tóxicos en un río es una emergencia ambiental seria. La prioridad es contenerlo rápidamente con barreras y materiales absorbentes, y luego iniciar su limpieza con métodos especializados y trabajar con expertos ambientales. Te recomiendo ver la película 'Dark Waters (2019)'",
       "title": "Derrame de Residuos Peligrosos",
       "description": "Un accidente ha provocado el derrame de residuos tóxicos en un río cercano, lo que ha generado preocupación en la comunidad local. ¿Cómo manejas esta situación?",
-      "img": "images/a.webp",
+      "img": "images/p.webp",
       "stats": [
         {
           "statText": "Limpieza inmediata y profunda",
@@ -957,7 +957,7 @@
             },
             {
               "key": "SS",
-              "impact": -4
+              "impact": -3
             },
             {
               "key": "capital",
@@ -970,10 +970,10 @@
     {
       "id": 17,
       "category": "Energía",
-      "extra": "",
+
       "title": "Crisis Energética en la Red Eléctrica",
       "description": "Una crisis en la red eléctrica está afectando el suministro de energía en tus fábricas. Te enfrentas a la posibilidad de comprar energía a costos elevados o reducir temporalmente la producción.",
-      "img": "images/a.webp",
+      "img": "images/q.webp",
       "stats": [
         {
           "statText": "Comprar energía a altos costos",
@@ -1033,7 +1033,7 @@
       "extra": "Ignorar las demandas de los empleados puede generar serias consecuencias, incluyendo huelgas y una disminución en la productividad. En casos extremos, como en algunas fábricas de China, las condiciones de trabajo precarias han llevado a tragedias, como suicidios de trabajadores debido al estrés y la explotación laboral.",
       "title": "Protesta de los Empleados por Condiciones de Trabajo",
       "description": "Los empleados han organizado una protesta exigiendo mejores condiciones laborales, incluyendo medidas para mejorar la salud y seguridad dentro de las fábricas. Ignorar estas demandas podría generar huelgas.",
-      "img": "images/a.webp",
+      "img": "images/r.jpeg",
       "stats": [
         {
           "statText": "Atender las demandas y mejorar las condiciones",
@@ -1093,7 +1093,7 @@
       "extra": "Si una empresa intenta silenciar un robo de información, las repercusiones pueden ser graves. Además de perder la confianza de los clientes, podría enfrentar demandas legales por violar derechos de privacidad, especialmente bajo regulaciones como el GDPR en Europa, que otorgan a los usuarios el derecho a saber cuándo sus datos han sido comprometidos.",
       "title": "Robo de Información en un CPD",
       "description": "Un ataque cibernético ha permitido el robo de información crítica en uno de tus CPDs. Esto pone en riesgo la seguridad de los datos y la confianza en tu empresa.",
-      "img": "images/a.webp",
+      "img": "images/s.jpeg",
       "stats": [
         {
           "statText": "Invertir en seguridad y mitigar el daño",
@@ -1153,7 +1153,7 @@
       "extra": "El Acuerdo de París es un tratado internacional en el que los países se comprometen a reducir sus emisiones de CO2 para limitar el calentamiento global a menos de 2°C en comparación con los niveles preindustriales. Su objetivo es frenar el cambio climático y evitar sus efectos más devastadores, como fenómenos meteorológicos extremos.",
       "title": "Sanción Internacional por Incumplir Normas de Emisiones",
       "description": "Has recibido una sanción internacional por superar los límites de emisión de CO2 establecidos por el Acuerdo de París. Debes decidir cómo abordar esta sanción.",
-      "img": "images/a.webp",
+      "img": "images/t.jpeg",
       "stats": [
         {
           "statText": "Pagar la multa y continuar operando",
@@ -1210,10 +1210,10 @@
     {
       "id": 21,
       "category": "Reciclaje",
-      "extra": "",
+
       "title": "Escasez de Materiales Reciclables",
       "description": "Tus proveedores te informan que hay una escasez de materiales reciclables, lo que aumenta el costo y dificulta la producción sostenible.",
-      "img": "images/a.webp",
+      "img": "images/u.jpeg",
       "stats": [
         {
           "statText": "Aumentar la inversión para garantizar el suministro",
@@ -1270,10 +1270,10 @@
     {
       "id": 22,
       "category": "Medioambiente",
-      "extra": "",
+
       "title": "Filtración de Productos Químicos en la Tierra",
       "description": "Se ha detectado una filtración de productos químicos tóxicos en el suelo cercano a tus fábricas. Los organismos medioambientales exigen una respuesta inmediata.",
-      "img": "images/a.webp",
+      "img": "images/v.jpeg",
       "stats": [
         {
           "statText": "Llevar a cabo una limpieza completa",
@@ -1330,10 +1330,10 @@
     {
       "id": 23,
       "category": "Reciclaje",
-      "extra": "",
+
       "title": "Implementación de un Programa de Reciclaje Interno",
       "description": "Se te propone implementar un programa de reciclaje interno en las oficinas y fábricas. Aunque los costos iniciales son altos, podría mejorar la imagen y la sostenibilidad de la empresa.",
-      "img": "images/a.webp",
+      "img": "images/w.jpeg",
       "stats": [
         {
           "statText": "Implementar el programa de reciclaje",
@@ -1390,10 +1390,10 @@
     {
       "id": 24,
       "category": "Reciclaje",
-      "extra": "",
+
       "title": "Incentivar el Uso de Productos Reciclados",
       "description": "Tus proveedores te ofrecen un descuento si aumentas el porcentaje de productos reciclados utilizados en tu producción. Aunque sería más costoso a corto plazo, reduciría tu impacto ambiental.",
-      "img": "images/productos_reciclados.png",
+      "img": "images/x.jpeg",
       "stats": [
         {
           "statText": "Aumentar el uso de productos reciclados",
@@ -1450,10 +1450,10 @@
     {
       "id": 25,
       "category": "Reciclaje",
-      "extra": "",
+
       "title": "Colaboración con Empresas de Reciclaje",
       "description": "Se te ha propuesto colaborar con una empresa especializada en reciclaje que ofrecería descuentos en los costos de eliminación de residuos si colaboras a largo plazo.",
-      "img": "images/a.webp",
+      "img": "images/y.jpeg",
       "stats": [
         {
           "statText": "Colaborar con la empresa de reciclaje",
@@ -1510,10 +1510,10 @@
     {
       "id": 26,
       "category": "Reciclaje",
-      "extra": "",
+
       "title": "Reducir el Plástico en los Productos",
       "description": "Existe una creciente demanda de productos con menos envases plásticos. Invertir en alternativas podría aumentar tu reputación y reducir residuos, pero los costos serían más altos.",
-      "img": "images/reducir_plastico.png",
+      "img": "images/z.jpeg",
       "stats": [
         {
           "statText": "Reducir el uso de plástico",
@@ -1570,10 +1570,10 @@
     {
       "id": 27,
       "category": "Reciclaje",
-      "extra": "",
+
       "title": "Reciclaje de Equipos Electrónicos Obsoletos",
       "description": "Tus fábricas y oficinas han acumulado muchos equipos electrónicos obsoletos. Puedes optar por reciclarlos o simplemente deshacerte de ellos.",
-      "img": "images/reciclaje_electronico.png",
+      "img": "images/aa.jpeg",
       "stats": [
         {
           "statText": "Reciclar los equipos electrónicos",
@@ -1630,10 +1630,10 @@
     {
       "id": 28,
       "category": "Reciclaje",
-      "extra": "",
+
       "title": "Implementar Políticas de Zero Waste",
       "description": "Se propone que tu empresa adopte políticas de 'Zero Waste', lo que implicaría una reducción drástica de los residuos, pero también un costo elevado de implementación y mantenimiento.",
-      "img": "images/a.webp",
+      "img": "images/bb.jpeg",
       "stats": [
         {
           "statText": "Adoptar la política de 'Zero Waste'",
@@ -1690,10 +1690,10 @@
     {
       "id": 29,
       "category": "Reciclaje",
-      "extra": "",
+
       "title": "Incentivos por Reciclaje en la Comunidad Local",
       "description": "La comunidad local propone un programa de incentivos para que las personas reciclen más. Esto aumentaría la cantidad de materiales reciclados disponibles para ti, pero requeriría una inversión.",
-      "img": "images/a.webp",
+      "img": "images/cc.jpeg",
       "stats": [
         {
           "statText": "Aportar a los incentivos de la comunidad",
@@ -1750,10 +1750,10 @@
     {
       "id": 30,
       "category": "Reciclaje",
-      "extra": "",
+
       "title": "Competencia Implementa Reciclaje Avanzado",
       "description": "Una empresa competidora ha implementado una avanzada política de reciclaje que mejora su imagen pública. ¿Deberías intentar ponerte al día o centrarte en otras áreas?",
-      "img": "images/a.webp",
+      "img": "images/dd.jpeg",
       "stats": [
         {
           "statText": "Iniciar un programa de reciclaje avanzado",
@@ -1810,10 +1810,10 @@
     {
       "id": 31,
       "category": "EE",
-      "extra": "",
+
       "title": "Reducción del Volumen de Trabajo para Ahorrar Energía",
       "description": "Las fábricas están trabajando a plena capacidad, lo que genera un alto consumo de energía. Reducir el volumen de trabajo podría ahorrar energía, pero también podría afectar la producción y los ingresos.",
-      "img": "images/a.webp",
+      "img": "images/ee.jpeg",
       "stats": [
         {
           "statText": "Reducir el volumen de trabajo",
@@ -1870,10 +1870,10 @@
     {
       "id": 32,
       "category": "EE",
-      "extra": "",
+
       "title": "Inversión en Energías Limpias",
       "description": "Se te presenta la oportunidad de invertir en fuentes de energía renovable, como la solar o la eólica. Esto reduciría significativamente el impacto ambiental, pero requiere una gran inversión inicial.",
-      "img": "images/a.webp",
+      "img": "images/ff.jpeg",
       "stats": [
         {
           "statText": "Invertir en energías limpias",
@@ -1930,10 +1930,10 @@
     {
       "id": 33,
       "category": "EE",
-      "extra": "",
+
       "title": "Implementar Sistemas de Monitoreo Energético",
       "description": "Puedes instalar sistemas de monitoreo energético en tus fábricas para mejorar la eficiencia y detectar desperdicios. Aunque esto implicaría costos, podría ahorrar energía a largo plazo.",
-      "img": "images/a.webp",
+      "img": "images/gg.jpeg",
       "stats": [
         {
           "statText": "Instalar sistemas de monitoreo energético",
@@ -1990,10 +1990,10 @@
     {
       "id": 34,
       "category": "EE",
-      "extra": "",
+
       "title": "Optimización de Horarios para Maximizar la EE",
       "description": "Puedes reorganizar los horarios de trabajo para operar en los momentos de menor demanda energética, reduciendo costos. Sin embargo, esto podría generar descontento entre los empleados.",
-      "img": "images/optimizacion_horarios.png",
+      "img": "images/hh.jpeg",
       "stats": [
         {
           "statText": "Reorganizar los horarios de trabajo",
@@ -2050,10 +2050,10 @@
     {
       "id": 35,
       "category": "EE",
-      "extra": "",
+
       "title": "Apagar Equipos No Esenciales Fuera de Horas Laborales",
       "description": "Se ha detectado que muchos equipos en tus oficinas y fábricas siguen consumiendo energía fuera del horario laboral. Puedes optar por apagarlos o mantenerlos en funcionamiento por conveniencia.",
-      "img": "images/a.webp",
+      "img": "images/ii.jpeg",
       "stats": [
         {
           "statText": "Apagar los equipos no esenciales",
@@ -2113,7 +2113,7 @@
       "extra": "Las luces LED son mucho más eficientes que las bombillas tradicionales, ya que convierten una mayor proporción de energía en luz en lugar de calor. Esto no solo reduce el consumo energético, sino que también genera una menor huella de carbono, ya que se requiere menos electricidad para producir la misma cantidad de luz. ",
       "title": "Mejora en el Aislamiento Térmico de las Instalaciones",
       "description": "Se propone mejorar el aislamiento térmico en tus fábricas para reducir la pérdida de calor y disminuir el consumo energético en climatización. Esta inversión requiere tiempo y dinero.",
-      "img": "images/a.webp",
+      "img": "images/jj.jpeg",
       "stats": [
         {
           "statText": "Mejorar el aislamiento térmico",
@@ -2170,10 +2170,10 @@
     {
       "id": 37,
       "category": "EE",
-      "extra": "",
+
       "title": "Uso de Iluminación LED en las Fábricas",
       "description": "El cambio a iluminación LED en todas las instalaciones podría reducir el consumo energético. Aunque el costo inicial es elevado, el ahorro a largo plazo es significativo.",
-      "img": "images/a.webp",
+      "img": "images/kk.jpeg",
       "stats": [
         {
           "statText": "Cambiar a iluminación LED",
@@ -2229,14 +2229,14 @@
     },
     {
       "id": 38,
-      "category": "",
-      "extra": "",
-      "title": "",
-      "description": "",
-      "img": "images/a.webp",
+      "category": "Capital",
+
+      "title": "Has sido recompensado por la ONU",
+      "description": "En reconocimiento a tu conducta responsable y sostenida, al no emitir gases GEI, has sido recompensado por la ONU con un incentivo.",
+      "img": "images/ll.jpeg",
       "stats": [
         {
-          "statText": "",
+          "statText": "Aceptar el dinero",
           "impacts": [
             {
               "key": "polution",
@@ -2256,12 +2256,12 @@
             },
             {
               "key": "capital",
-              "impact": 0
+              "impact": 10
             }
           ]
         },
         {
-          "statText": "",
+          "statText": "Trae pa' aká",
           "impacts": [
             {
               "key": "polution",
@@ -2281,7 +2281,7 @@
             },
             {
               "key": "capital",
-              "impact": 0
+              "impact": 10
             }
           ]
         }
@@ -2290,10 +2290,10 @@
     {
       "id": 39,
       "category": "Capital",
-      "extra": "",
+
       "title": "Aumentar la Producción sin Controles Ambientales",
       "description": "Tus fábricas pueden aumentar la producción eliminando algunos controles ambientales para reducir costos operativos. Esto incrementaría el capital rápidamente, pero a costa de un mayor impacto ambiental.",
-      "img": "images/a.webp",
+      "img": "images/mm.jpeg",
       "stats": [
         {
           "statText": "Aumentar la producción",
@@ -2350,10 +2350,10 @@
     {
       "id": 40,
       "category": "Capital",
-      "extra": "",
+
       "title": "Recortar Beneficios para los Empleados",
       "description": "Puedes aumentar las ganancias recortando beneficios como seguro médico y transporte para los empleados. Sin embargo, esto afectaría gravemente su satisfacción y moral.",
-      "img": "images/a.webp",
+      "img": "images/nn.jpeg",
       "stats": [
         {
           "statText": "Recortar los beneficios",
@@ -2410,10 +2410,10 @@
     {
       "id": 41,
       "category": "Capital",
-      "extra": "",
+
       "title": "Uso de Combustibles Baratos y Contaminantes",
       "description": "El uso de combustibles más baratos y contaminantes puede reducir considerablemente los costos energéticos, pero incrementará las emisiones y la contaminación.",
-      "img": "images/a.webp",
+      "img": "images/oo.jpeg",
       "stats": [
         {
           "statText": "Utilizar combustibles baratos",
@@ -2470,10 +2470,10 @@
     {
       "id": 42,
       "category": "Capital",
-      "extra": "",
+
       "title": "Exportar Residuos a Países en Desarrollo",
       "description": "Puedes ahorrar en la gestión de residuos exportándolos a países en desarrollo con regulaciones ambientales más laxas. Esto ahorraría dinero, pero tendría un gran impacto en la polution global y la ética de tu empresa.",
-      "img": "images/a.webp",
+      "img": "images/pp.jpeg",
       "stats": [
         {
           "statText": "Exportar los residuos",
@@ -2530,10 +2530,10 @@
     {
       "id": 43,
       "category": "Capital",
-      "extra": "",
+
       "title": "Aumento de Precios en Productos Esenciales",
       "description": "Tus productos son necesarios para la mayoría de los consumidores. Puedes aumentar los precios para incrementar tus ganancias, aunque esto afectaría negativamente la opinión pública y la SS.",
-      "img": "images/a.webp",
+      "img": "images/qq.jpeg",
       "stats": [
         {
           "statText": "Aumentar los precios",
@@ -2590,10 +2590,10 @@
     {
       "id": 44,
       "category": "Capital",
-      "extra": "",
+
       "title": "Subcontratación a Empresas con Bajos Estándares Laborales",
       "description": "Puedes reducir costos subcontratando servicios a empresas en países con bajos estándares laborales, lo que generaría ganancias a corto plazo pero podría dañar la reputación de tu empresa.",
-      "img": "images/a.webp",
+      "img": "images/rr.jpeg",
       "stats": [
         {
           "statText": "Subcontratar a empresas más baratas",
@@ -2650,10 +2650,10 @@
     {
       "id": 45,
       "category": "Capital",
-      "extra": "",
+
       "title": "Venta de Terrenos en Áreas Protegidas",
       "description": "Tienes la oportunidad de vender terrenos ubicados en áreas protegidas a una compañía interesada en desarrollarlos. Esto generaría grandes ingresos, pero dañaría la biodiversidad y la imagen pública de tu empresa.",
-      "img": "images/a.webp",
+      "img": "images/ss.jpeg",
       "stats": [
         {
           "statText": "Vender los terrenos",
@@ -2710,10 +2710,10 @@
     {
       "id": 46,
       "category": "Capital",
-      "extra": "",
+
       "title": "Evitar Invertir en Reciclaje para Reducir Costos",
       "description": "Se te ofrece la posibilidad de reducir los costos de operación evitando la inversión en sistemas de reciclaje. Aunque ahorrarías capital, esto aumentaría los residuos y generaría una mala imagen pública.",
-      "img": "images/a.webp",
+      "img": "images/tt.jpeg",
       "stats": [
         {
           "statText": "Evitar la inversión en reciclaje",
@@ -2770,10 +2770,10 @@
     {
       "id": 47,
       "category": "Capital",
-      "extra": "",
+
       "title": "Usar Datos de Usuarios para Ganancia Económica",
       "description": "Tienes la oportunidad de vender datos de usuarios a un tercero para obtener una ganancia inmediata. Sin embargo, esto podría dañar la confianza de tus usuarios a largo plazo.",
-      "img": "images/a.webp",
+      "img": "images/uu.jpeg",
       "stats": [
         {
           "statText": "Vender información",
@@ -2792,7 +2792,7 @@
             },
             {
               "key": "SS",
-              "impact": -4
+              "impact": -3
             },
             {
               "key": "capital",
@@ -2830,10 +2830,10 @@
     {
       "id": 48,
       "category": "Crisis Global",
-      "extra": "",
+
       "title": "Pandemia Global",
       "description": "Una pandemia global ha golpeado la producción y se espera que las empresas colaboren reduciendo su carga operativa o implementando medidas sanitarias para proteger a los empleados.",
-      "img": "images/a.webp",
+      "img": "images/vv.jpeg",
       "stats": [
         {
           "statText": "Implementar medidas sanitarias y reducir producción",
@@ -2882,66 +2882,6 @@
             {
               "key": "capital",
               "impact": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 100,
-      "category": "Capital",
-      "extra": "",
-      "title": "Has sido recompensado por la ONU",
-      "description": "En reconocimiento a tu conducta responsable y sostenida, al no emitir gases GEI, has sido recompensado por la ONU con un incentivo.",
-      "img": "images/a.webp",
-      "stats": [
-        {
-          "statText": "Aceptar el dinero",
-          "impacts": [
-            {
-              "key": "polution",
-              "impact": 0
-            },
-            {
-              "key": "reciclaje",
-              "impact": 0
-            },
-            {
-              "key": "EE",
-              "impact": 0
-            },
-            {
-              "key": "SS",
-              "impact": 0
-            },
-            {
-              "key": "capital",
-              "impact": 10
-            }
-          ]
-        },
-        {
-          "statText": "Trae pa' aká",
-          "impacts": [
-            {
-              "key": "polution",
-              "impact": 0
-            },
-            {
-              "key": "reciclaje",
-              "impact": 0
-            },
-            {
-              "key": "EE",
-              "impact": 0
-            },
-            {
-              "key": "SS",
-              "impact": 0
-            },
-            {
-              "key": "capital",
-              "impact": 10
             }
           ]
         }
