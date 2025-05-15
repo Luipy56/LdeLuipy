@@ -29,6 +29,10 @@
     text-decoration: none;
 }
 
+.Sinunderline{
+    text-decoration: none;
+}
+
 .Principal{
     display: flex;
     flex-direction: row;
