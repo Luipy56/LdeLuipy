@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="textoh">
+            <div>
+        <a class="textolink" href="index.html">HOME</a>
+        <a class="textolink" href="calculadora.html">CALCULADORA</a>
+        <a class="textolink" href="informacion.html">INFORMACIÓ</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="headc">
+        <h1>Calcula la petjada del teu viatge en avió</h1>
+    </div>
+
+    <div class="resultado">
+        <fieldset>
+            <p>Quants quilòmetres vols recórrer amb l'avió? <input type="number" step="1" class="aigua" id="km"></p> <br> <br>
+            <button class="botom" onclick="return procesar(document.getElementById('km').value)">CALCULA</button>
+        </fieldset>
+    </div>
+
+</body>
+    <script>
+        function procesar(p1){
+            if (p1 > 0) window.location.href = `result.html?type=avion&p1=${p1}&p2=NaN`;
+        }
+    </script>
+</html>

@@ -1,0 +1,62 @@
+{
+  "casa": {
+    "p1": {
+      "5": "Una ducha de 5 minutos consume aproximadamente 50 litros de agua caliente. Si se utiliza un calentador a gas, esto puede representar un gasto de cerca de 0,2 kg de gas butano. Reducir la ducha a 3 minutos puede ahorrar tanto agua como combustible, sin sacrificar la higiene.",
+      "10": "Ducharse durante 10 minutos puede gastar entre 90 y 100 litros de agua caliente, lo cual equivale a un consumo de unos 0,4 kg de butano o aproximadamente 4 kWh de energía en calentadores eléctricos. Este gasto energético podría alimentar una bombilla LED de 10W durante 400 horas.",
+      "20": "Una ducha de 20 minutos puede usar hasta 200 litros de agua caliente. El consumo de gas puede rondar los 0,8 kg de butano. Este hábito no solo incrementa el coste en la factura, sino que tiene un notable impacto ambiental. Se recomienda instalar cabezales de ducha de bajo flujo y temporizadores.",
+      "30": "Media hora bajo la ducha con agua caliente supone más de 300 litros consumidos. Esto puede superar el 1,2 kg de butano o 12 kWh eléctricos, equivalente al consumo energético de una nevera eficiente durante una semana."
+    },
+    "p2": {
+      "2": "Tener las luces encendidas durante 2 horas con 5 bombillas LED de 10W cada una supone un consumo de 100 Wh, lo cual es poco en términos de coste, pero multiplicado por 30 días suma 3 kWh al mes. Es recomendable apagar las luces de habitaciones vacías.",
+      "5": "5 horas diarias de iluminación con 6 bombillas LED de 12W implica un uso de 360 Wh al día, es decir, unos 10,8 kWh al mes. Esta cantidad de energía equivale al consumo mensual de una televisión LED de 40'' usada por 3 horas diarias.",
+      "6": "Iluminar una vivienda con 12 bombillas LED de 10W durante 6 horas al día supone un consumo mensual de unos 21,6 kWh. Esta cantidad puede representar hasta un 10% de la factura eléctrica de una vivienda eficiente.",
+      "8": "Mantener 10 bombillas LED de 10W encendidas durante 8 horas diarias genera un consumo mensual de 24 kWh. Aunque es eficiente comparado con bombillas incandescentes, el ahorro adicional puede lograrse con sensores de movimiento o temporizadores en pasillos y zonas comunes.",
+      "10": "Si una casa mantiene 15 bombillas LED encendidas durante 10 horas diarias, el consumo mensual puede superar los 45 kWh. El uso de sensores de presencia o programadores puede mitigar este impacto sin comprometer el confort."
+    }
+  },
+  "coche": {
+    "p2": {
+      "gasolina": {
+        "p1": {
+          "5": "Un trayecto de 5 km diarios en coche de gasolina implica un consumo aproximado de 0,35 litros, lo que supone 0,8 kg de CO₂. Este tipo de trayectos cortos generan un mayor desgaste mecánico y aumentan el consumo relativo, por lo que caminar, usar bicicleta o transporte público sería más eficiente.",
+          "10": "Un coche de gasolina promedio consume entre 6 y 8 litros cada 100 km. Para 10 km diarios, esto representa cerca de 0,7 litros, lo que implica unas 1,6 kg de CO₂ emitidos y un coste de 1,2 € diarios (según precio medio por litro).",
+          "30": "Recorrer 30 km diarios con un coche de gasolina supone un consumo aproximado de 2,4 litros y más de 4,8 kg de CO₂. En un mes, el gasto puede superar los 85 € en combustible. Conducción eficiente y mantenimiento regular pueden reducir este impacto.",
+          "100": "Hacer 100 km diarios implica un consumo de 7 a 8 litros de gasolina, con más de 17 kg de CO₂ emitidos cada día. Este ritmo tiene un gran impacto ambiental y económico. Es recomendable considerar coche compartido o transporte público en tramos largos."
+        }
+      },
+      "diesel": {
+        "p1": {
+          "4": "Con solo 4 km al día, un coche diésel apenas alcanza la temperatura óptima de funcionamiento, lo que incrementa el consumo hasta 0,3 litros y genera más de 0,8 kg de CO₂. Además, el motor sufre más desgaste, por lo que no se recomienda el uso habitual del diésel para trayectos tan cortos.",
+          "20": "Un coche diésel moderno consume en promedio 5 litros cada 100 km. Para 20 km diarios, el consumo ronda 1 litro, generando 2,6 kg de CO₂ y un coste de aproximadamente 1,4 € diarios.",
+          "40": "Con 40 km al día, se gastan unos 2 litros de diésel, generando más de 5 kg de CO₂. Aunque más eficiente que la gasolina, sigue siendo contaminante. Reducir velocidad y evitar aceleraciones bruscas mejora el rendimiento.",
+          "90": "90 km diarios en un coche diésel pueden costar unos 6,5 € y emitir cerca de 12 kg de CO₂. A largo plazo, esto representa más de 360 € mensuales en combustible y una huella considerable. Se recomienda evaluar alternativas como híbridos o eléctricos."
+        }
+      },
+      "electric": {
+        "p1": {
+          "3": "Un coche eléctrico recorriendo 3 km diarios consume apenas 0,45 kWh, lo que equivale a menos de 0,10 € en costes eléctricos y sin emisiones directas. Es ideal para este tipo de trayectos cortos, especialmente si se recarga con energía solar o en horarios de tarifa reducida.",
+          "15": "Un coche eléctrico consume unos 15 kWh cada 100 km. Para 15 km diarios, el gasto ronda 2,2 kWh, que cuesta menos de 0,50 €, siendo además libre de emisiones directas. Ideal para trayectos urbanos.",
+          "50": "Con 50 km diarios, el consumo es de unos 7,5 kWh, lo que equivale a menos de 1,5 € diarios en electricidad. Esto es mucho más económico que cualquier opción con combustible fósil. Cargar en horarios valle optimiza el coste.",
+          "100": "Recorrer 100 km al día en un coche eléctrico implica un gasto de 15 kWh. Esto cuesta entre 2 y 3 € dependiendo del proveedor eléctrico. La huella de carbono es muy baja si se recarga con energía renovable."
+        }
+      },
+      "hibrid": {
+        "p1": {
+          "6": "Un trayecto de 6 km diarios en coche híbrido puede realizarse casi en su totalidad en modo eléctrico si la batería está cargada, con un consumo de combustible casi nulo. Esta eficiencia hace al híbrido una opción razonable para la ciudad, aunque también puede valorarse una alternativa 100% eléctrica.",
+          "25": "Un coche híbrido puede consumir unos 4 litros de combustible cada 100 km, dependiendo del trayecto. Para 25 km diarios, se consumiría aproximadamente 1 litro, generando 2,3 kg de CO₂, aunque con menos impacto urbano gracias al motor eléctrico.",
+          "60": "Con 60 km al día, el gasto ronda los 2,4 litros de combustible. El motor eléctrico ayuda a reducir el consumo en ciudad, pero en autopista el ahorro es menor. Se recomienda aprovechar el frenado regenerativo y la conducción suave.",
+          "120": "A 120 km diarios, los híbridos consumen cerca de 5 litros de gasolina o diésel según el modelo, con unas emisiones de más de 11 kg de CO₂. En estos casos, un híbrido enchufable o eléctrico podría ser más adecuado a medio plazo."
+        }
+      }
+    }
+  },
+  "avion": {
+    "p1": {
+      "300": "Un vuelo de 300 km emite entre 80 y 100 kg de CO₂ por pasajero, debido a que el despegue concentra la mayor parte del consumo de combustible. En trayectos tan cortos, el avión es el medio más contaminante en comparación con trenes o autobuses.",
+      "800": "Un vuelo de 800 km supone una media de 200 kg de CO₂ por pasajero. Este tipo de trayectos se consideran de corto-medio alcance y son menos eficientes que el tren de alta velocidad. Evitarlos o agrupar viajes puede reducir notablemente la huella personal.",
+      "1500": "Viajar 1500 km en avión implica unas emisiones cercanas a 350-400 kg de CO₂ por persona. A mayor distancia, el impacto por kilómetro baja ligeramente, pero sigue siendo una de las formas más intensivas en carbono.",
+      "3000": "Un vuelo de 3000 km genera aproximadamente 600-750 kg de CO₂ por pasajero. Aunque los aviones de largo alcance son más eficientes por kilómetro, la distancia amplifica el impacto. Compensar la huella de carbono es recomendable en este tipo de trayectos.",
+      "10000": "Un vuelo intercontinental de 10.000 km produce cerca de 2 toneladas de CO₂ por pasajero en clase económica. Este valor puede duplicarse en clase ejecutiva. Reducir la frecuencia de estos vuelos o elegir aerolíneas con planes de compensación es clave para mitigar el impacto."
+    }
+  }
+}

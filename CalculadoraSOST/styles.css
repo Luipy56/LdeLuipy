@@ -1,0 +1,150 @@
+.header{
+    background-color: #36816C;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: flex-end
+}
+
+.image1{
+    justify-content: center;
+}
+
+.textoh{
+    justify-content: flex-end;
+    margin: 10px;
+    align-items: center;
+    font-size: 120%;
+    font-weight: bold;
+}
+.textoh > div {
+    display: flex;
+    gap: 15px;
+}
+
+.textolink{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80%;
+    text-decoration: none;
+}
+
+.Principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+}
+
+.image2{
+    width: 100%;
+    height: auto;
+    object-fit: cover;  
+}
+
+.image{
+    width: 30%;
+    height: 80%;
+}
+
+.textolee{
+    display: flex;
+    background-color: #EBF9F6;
+    text-align: left;
+    object-fit: contain;
+    align-items: center;
+    width: 110%;}
+
+.texton{
+    color: #EC7B53;
+    margin-left: 20px;
+}
+
+.textog{
+    color: #36816C;
+    margin-left: 20px;
+}
+
+.botom{
+        background-color: #EC7B53;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        size: 60%;
+        margin-left: 20px;
+        margin-bottom: 30px;
+}
+
+.cursos{
+    display: flex;
+    background-color: #EBF9F6;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+
+.headc{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #36816C;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.cursosi {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.curso-figure {
+    flex: 1;
+    max-width: 400px; 
+    text-align: center;
+}
+
+.curso-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.capcap {
+    color: #36816C;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.caption {
+    font-size: 14px;
+    color: #333;
+    padding: 10px;
+}
+
+.resultado {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #36816C;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    text-align: justify;
+    font-family: Arial, sans-serif;
+    color: #286151;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 80%;
+}
+
+.grafico {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#graficoComparacion {
+    width: 100%;
+    height: auto;
+}

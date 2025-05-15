@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="textoh">
+            <div>
+        <a class="textolink" href="index.html">HOME</a>
+        <a class="textolink" href="calculadora.html">CALCULADORA</a>
+        <a class="textolink" href="informacion.html">INFORMACIO</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="headc">
+        <h1>Calcular la petjada de la tave propia casa</h1>
+    </div>
+
+    <div class="resultado">
+        <fieldset>
+            <p>Quants minuts tens l'aigua calenta? <input type="number" step="1" class="agua" id="agua"></p>
+            <p>Cuanto tiempo pasan las luces de tu casa encendidas? <input type="number" step="1" class="electricitat" id="electricitat"></p><br> <br>
+            <button class="botom" onclick="return procesar(document.getElementById('agua').value, document.getElementById('electricitat').value)">CALCULA</button>
+        </fieldset>
+    </div>
+
+</body>
+    <script>
+        function procesar(p1,p2){
+            if (p1 > 0 && p2 > 0) window.location.href = `result.html?type=casa&p1=${p1}&p2=${p2}`;
+        }
+    </script>
+</html>
