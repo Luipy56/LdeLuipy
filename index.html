@@ -3,48 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--     <meta http-equiv="refresh" content="0; url=./DocProject/"> -->
-    <title>Índice de Navegación</title>
+    <title>Índice de Proyectos</title>
     <style>
+        :root {
+            --verde-lima: #bfff00;
+            --negro: #121212;
+            --gris-oscuro: #1e1e1e;
+            --blanco: #f0f0f0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--negro);
+            color: var(--blanco);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--gris-oscuro);
+            padding: 40px 30px;
+            border-radius: 12px;
             max-width: 600px;
-            margin: 20px auto;
-            padding: 0 20px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(191, 255, 0, 0.1);
         }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--verde-lima);
+            padding-bottom: 10px;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+            image-rendering: pixelated;
+            margin-right: 12px;
+        }
+
         h1 {
-            text-align: center;
+            font-size: 1.8em;
+            color: var(--verde-lima);
+            margin: 0;
         }
+
         ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
+
         li {
-            margin-bottom: 10px;
+            margin: 12px 0;
         }
+
         a {
             text-decoration: none;
-            color: #1e90ff;
+            color: var(--verde-lima);
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
         }
+
+        a::after {
+            content: '';
+            display: block;
+            width: 0%;
+            height: 2px;
+            background: var(--verde-lima);
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+        }
+
         a:hover {
-            text-decoration: underline;
+            color: #dfff70;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4em;
+            }
+
+            .logo {
+                width: 24px;
+                height: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Índice de Navegación</h1>
-    <ul>
-<!--         <li><a href="CVVirtual/">CVVirtual</a></li> -->
-        <li><a href="DocProject/">DocProject</a></li>
-        <li><a href="Site/">Site</a></li>
-        <li><a href="https://sites.google.com/view/luipyofficialweb/inicio">Site Google</a></li>
-        <li><a href="Sample/" style="font-size:bold;">Tkinter Projects</a></li>
-        <li><a href="GreenRealms/">Green Realms</a></li>
-        <li><a href="CalculadoraSOST/">Calculadora Proyecto SOST</a></li>
-        <li><a href="lujohotelcopy/">lujohotelcopy</a></li>
-        <li><a href="https://www.youtube.com/channel/UC5VnQnxseYH5folERXLqxiA">YouTube</a></li>
-        <li><a href="https://discord.com/invite/6ExMmZM6rK">Discord</a></li>
-    </ul>
+    <div class="container">
+        <header>
+            <img src="Ojos.png" alt="Logo" class="logo">
+            <h1>Índice de Proyectos</h1>
+        </header>
+        <ul>
+            <li><a href="DocProject/">DocProject</a></li>
+            <li><a href="Site/">Site</a></li>
+            <li><a href="https://sites.google.com/view/luipyofficialweb/inicio">Site Google</a></li>
+            <li><a href="Sample/">Tkinter Projects</a></li>
+            <li><a href="GreenRealms/">Green Realms</a></li>
+            <li><a href="CalculadoraSOST/">Calculadora Proyecto SOST</a></li>
+            <li><a href="lujohotelcopy/">lujohotelcopy</a></li>
+            <li><a href="https://www.youtube.com/channel/UC5VnQnxseYH5folERXLqxiA">YouTube</a></li>
+            <li><a href="https://discord.com/invite/6ExMmZM6rK">Discord</a></li>
+        </ul>
+    </div>
 </body>
 </html>
