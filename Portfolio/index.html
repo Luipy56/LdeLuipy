@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Profesional</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+    }
+    header, nav, section, footer {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 1px solid #333;
+      z-index: 1000;
+    }
+    nav a {
+      color: #0f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    h1, h2, h3 {
+      color: #0f0;
+    }
+    .card {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px #000;
+    }
+    .skills-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    a.button {
+      color: #0f0;
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      background-color: #222;
+      border: 1px solid #444;
+      color: #fff;
+      border-radius: 4px;
+    }
+    form button {
+      background-color: #0f0;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#formacion">Formación</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <header id="inicio">
+    <h1>Nombre del Profesional</h1>
+    <p>Desarrollador Full Stack | Entusiasta del software libre | Creativo tecnológico</p>
+    <a class="button" href="#contacto">Contactar</a> | 
+    <a class="button" href="#recursos">Mis recursos</a>
+  </header>
+
+  <section id="habilidades">
+    <h2>Habilidades Técnicas</h2>
+    <div class="skills-grid">
+      <div class="card"><strong>Lenguajes:</strong> Python, JavaScript, C++</div>
+      <div class="card"><strong>Frameworks:</strong> Django, React, Node.js</div>
+      <div class="card"><strong>DevOps:</strong> Git, Docker, CI/CD</div>
+      <div class="card"><strong>Bases de datos:</strong> PostgreSQL, MongoDB</div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos Destacados</h2>
+    <div class="projects-grid">
+      <div class="card">
+        <h3>Nombre del Proyecto</h3>
+        <p>Descripción breve del proyecto, tecnologías utilizadas y objetivo alcanzado.</p>
+        <a class="button" href="#">Ver más</a>
+      </div>
+      <!-- Repetir div.card para más proyectos -->
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <h2>Experiencia Laboral</h2>
+    <div class="card">
+      <h3>Empresa Ejemplo</h3>
+      <p><strong>Puesto:</strong> Desarrollador Backend</p>
+      <p><strong>Fechas:</strong> 2022 - Actualidad</p>
+      <p>Descripción de responsabilidades y logros clave.</p>
+    </div>
+  </section>
+
+  <section id="formacion">
+    <h2>Formación Académica</h2>
+    <div class="card">
+      <p><strong>Grado en Ingeniería Informática</strong> - Universidad X (2017–2021)</p>
+    </div>
+    <div class="card">
+      <p><strong>Certificaciones:</strong> AWS Certified, Azure Fundamentals</p>
+    </div>
+  </section>
+
+  <section id="motivacion">
+    <h2>Motivaciones y Objetivos</h2>
+    <div class="card">
+      <p>Me motiva trabajar en proyectos que combinan rendimiento y diseño eficiente. Mi objetivo es continuar desarrollando soluciones de software sólidas mientras aprendo nuevas tecnologías y frameworks modernos.</p>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Nombre">
+      <input type="email" placeholder="Email">
+      <textarea rows="5" placeholder="Mensaje"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p>O también puedes escribirme a: <a class="button" href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
+  </section>
+
+  <section id="recursos">
+    <h2>Mis Recursos / Otros Enlaces</h2>
+    <ul>
+      <li><a class="button" href="DocProject/">DocProject</a></li>
+      <li><a class="button" href="https://ldeluipy.es/ldeluipy/ProjectMC-main/">Mc Status</a></li>
+      <li><a class="button" href="Site/">Site</a></li>
+      <li><a class="button" href="https://sites.google.com/view/luipyofficialweb/inicio">Site Google</a></li>
+      <li><a class="button" href="Sample/">Tkinter Projects</a></li>
+      <li><a class="button" href="GreenRealms/">Green Realms</a></li>
+      <li><a class="button" href="CalculadoraSOST/">Calculadora Proyecto SOST</a></li>
+      <li><a class="button" href="presentacionlujo/">Presentación Proyecto Final CM</a></li>
+      <li><a class="button" href="lujohotelcopy/">lujohotelcopy</a></li>
+      <li><a class="button" href="https://www.youtube.com/channel/UC5VnQnxseYH5folERXLqxiA">YouTube</a></li>
+      <li><a class="button" href="https://discord.com/invite/6ExMmZM6rK">Discord</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tu Nombre. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
