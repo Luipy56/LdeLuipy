@@ -1,175 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Profesional</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matriz Pixel Perfect</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #111;
-      color: #f0f0f0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
     }
-    header, nav, section, footer {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: #000;
+
+    body {
+      background: url('bg1.png') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
-      justify-content: space-around;
-      border-bottom: 1px solid #333;
-      z-index: 1000;
+      justify-content: center;
+      align-items: center;
     }
-    nav a {
-      color: #0f0;
-      text-decoration: none;
-      font-weight: bold;
+
+    .container {
+      position: relative;
+      width: 600px;
     }
-    h1, h2, h3 {
-      color: #0f0;
-    }
-    .card {
-      background-color: #1a1a1a;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 10px #000;
-    }
-    .skills-grid, .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    a.button {
-      color: #0f0;
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    form input, form textarea {
+
+    .center-image {
       width: 100%;
-      padding: 0.5rem;
-      margin: 0.5rem 0;
-      background-color: #222;
-      border: 1px solid #444;
-      color: #fff;
-      border-radius: 4px;
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
     }
-    form button {
-      background-color: #0f0;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 4px;
+
+    .grid-overlay {
+      position: absolute;
+      top: calc(17px * 3.409); /* Borde superior escalado */
+      left: calc(7px * 3.409); /* Borde izquierdo escalado */
+      display: grid;
+      grid-template-columns: repeat(9, calc(18px * 3.409)); /* Cada celda + separación */
+      grid-template-rows: repeat(3, calc(18px * 3.409));
+      pointer-events: none;
     }
+
+    .cell {
+      width: calc(18px * 3.409);
+      height: calc(18px * 3.409);
+      box-sizing: border-box;
+      pointer-events: auto;
+    }
+
+    .cell a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: background-color 0.2s;
+    }
+
+    .sprite {
+        width: calc(16px * 3.409);
+        height: calc(16px * 3.409);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        transition: transform 0.2s;
+        margin: auto;
+        margin-top: calc(0.7px * 3.409);
+    }
+    .sprite.NoPixel{
+        image-rendering:auto;
+    }
+    
+    .cell a:hover .sprite {
+    transform: scale(1.2); /* leve aumento */
+    }
+
+    .sprite-compass {background-image: url('sprites/compass.png');}
+    .sprite-head {background-image: url('sprites/head.png');}
+    .sprite-quil {background-image: url('sprites/quil.png');}
+    .sprite-gitLogo {background-image: url('sprites/gitLogo.png');}
+    
+      
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#formacion">Formación</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <header id="inicio">
-    <h1>Nombre del Profesional</h1>
-    <p>Desarrollador Full Stack | Entusiasta del software libre | Creativo tecnológico</p>
-    <a class="button" href="#contacto">Contactar</a> | 
-    <a class="button" href="#recursos">Mis recursos</a>
-  </header>
-
-  <section id="habilidades">
-    <h2>Habilidades Técnicas</h2>
-    <div class="skills-grid">
-      <div class="card"><strong>Lenguajes:</strong> Python, JavaScript, C++</div>
-      <div class="card"><strong>Frameworks:</strong> Django, React, Node.js</div>
-      <div class="card"><strong>DevOps:</strong> Git, Docker, CI/CD</div>
-      <div class="card"><strong>Bases de datos:</strong> PostgreSQL, MongoDB</div>
-    </div>
-  </section>
-
-  <section id="proyectos">
-    <h2>Proyectos Destacados</h2>
-    <div class="projects-grid">
-      <div class="card">
-        <h3>Nombre del Proyecto</h3>
-        <p>Descripción breve del proyecto, tecnologías utilizadas y objetivo alcanzado.</p>
-        <a class="button" href="#">Ver más</a>
-      </div>
-      <!-- Repetir div.card para más proyectos -->
-    </div>
-  </section>
-
-  <section id="experiencia">
-    <h2>Experiencia Laboral</h2>
-    <div class="card">
-      <h3>Empresa Ejemplo</h3>
-      <p><strong>Puesto:</strong> Desarrollador Backend</p>
-      <p><strong>Fechas:</strong> 2022 - Actualidad</p>
-      <p>Descripción de responsabilidades y logros clave.</p>
-    </div>
-  </section>
-
-  <section id="formacion">
-    <h2>Formación Académica</h2>
-    <div class="card">
-      <p><strong>Grado en Ingeniería Informática</strong> - Universidad X (2017–2021)</p>
-    </div>
-    <div class="card">
-      <p><strong>Certificaciones:</strong> AWS Certified, Azure Fundamentals</p>
-    </div>
-  </section>
-
-  <section id="motivacion">
-    <h2>Motivaciones y Objetivos</h2>
-    <div class="card">
-      <p>Me motiva trabajar en proyectos que combinan rendimiento y diseño eficiente. Mi objetivo es continuar desarrollando soluciones de software sólidas mientras aprendo nuevas tecnologías y frameworks modernos.</p>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form>
-      <input type="text" placeholder="Nombre">
-      <input type="email" placeholder="Email">
-      <textarea rows="5" placeholder="Mensaje"></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <p>O también puedes escribirme a: <a class="button" href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
-  </section>
-
-  <section id="recursos">
-    <h2>Mis Recursos / Otros Enlaces</h2>
-    <ul>
-      <li><a class="button" href="DocProject/">DocProject</a></li>
-      <li><a class="button" href="https://ldeluipy.es/ldeluipy/ProjectMC-main/">Mc Status</a></li>
-      <li><a class="button" href="Site/">Site</a></li>
-      <li><a class="button" href="https://sites.google.com/view/luipyofficialweb/inicio">Site Google</a></li>
-      <li><a class="button" href="Sample/">Tkinter Projects</a></li>
-      <li><a class="button" href="GreenRealms/">Green Realms</a></li>
-      <li><a class="button" href="CalculadoraSOST/">Calculadora Proyecto SOST</a></li>
-      <li><a class="button" href="presentacionlujo/">Presentación Proyecto Final CM</a></li>
-      <li><a class="button" href="lujohotelcopy/">lujohotelcopy</a></li>
-      <li><a class="button" href="https://www.youtube.com/channel/UC5VnQnxseYH5folERXLqxiA">YouTube</a></li>
-      <li><a class="button" href="https://discord.com/invite/6ExMmZM6rK">Discord</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Tu Nombre. Todos los derechos reservados.</p>
-  </footer>
+  <div class="container">
+    <img src="chestAlpha.png" alt="Imagen centrada" class="center-image">
+    <div class="grid-overlay"></div>
+    <script>
+        const gridData = [
+            null, null, null, null, "sprite-compass", null, null, null, null,
+            null, { class: "sprite-head", noPixel: true }, null, null, null, null, null, "sprite-quil", null,
+            null, null, null, null, { class: "sprite-gitLogo", noPixel: true, link: "https://doc.ldeluipy.es" }, null, null, null, null
+        ];
+    </script>
+    <script>
+        const gridOverlay = document.querySelector(".grid-overlay");
+      
+        gridData.forEach(cell => {
+          const cellDiv = document.createElement("div");
+          cellDiv.classList.add("cell");
+      
+          const a = document.createElement("a");
+          a.href = "#";
+      
+          if (cell) {
+            const sprite = document.createElement("div");
+            sprite.classList.add("sprite");
+      
+            if (typeof cell === "string") {
+              sprite.classList.add(cell);
+            } else {
+              sprite.classList.add(cell.class);
+              if (cell.noPixel) sprite.classList.add("NoPixel");
+              if (cell.link) a.href = cell.link;
+              if (cell.link && cell.link.startsWith("http")) a.target = "_blank";
+            }
+      
+            a.appendChild(sprite);
+          }
+      
+          cellDiv.appendChild(a);
+          gridOverlay.appendChild(cellDiv);
+        });
+    </script>
+      
+  </div>
 </body>
 </html>
