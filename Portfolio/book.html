@@ -93,49 +93,155 @@
       text-decoration: underline;
       color: black;
     }
+
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+    
+    .left-button {
+      left: -140px; /* separa del borde del libro */
+    }
+    
+    .right-button {
+      right: -140px;
+    }
+    
+    .button-img {
+      width: calc(32px * 2);  /* escala la imagen */
+      image-rendering: pixelated;
+    }
+
+    .left-button:hover .button-img {
+      content: url('widgets/leftHoverNormalButton.png');
+    }
+    
+    .right-button:hover .button-img {
+      content: url('widgets/rightHoverNormalButton.png');
+    }
+    
   </style>
 </head>
 <body>
   <div class="book-image-container" style="position: relative;">
     <img src="img/DobleOpenedBook.png" alt="Libro abierto" class="book-image" />
+
+    <button class="nav-button left-button">
+      <img src="widgets/leftNormalButton.png" class="button-img" alt="Anterior">
+    </button>
+
+    <button class="nav-button right-button">
+      <img src="widgets/rightNormalButton.png" class="button-img" alt="Siguiente">
+    </button>
+
     <div class="book-overlay">
-        <div class="page page-left">
-            <p class="typewriter" data-text="Yoel Berjaga, estudiante de Desarrollo de Aplicaciones Web, con experiencia en Python, Java, PHP, C y JavaScript."></p>
-            <p class="typewriter" data-text="Actualmente cursando DAW y formado en Sistemas Microinformáticos y Redes."></p>
-            <p class="typewriter" data-text="Soporte técnico, mantenimiento y configuración de redes."></p>
-            <p class="typewriter" data-text="Idiomas: Castellano y Catalán nativos; Inglés intermedio-alto."></p>
-            <p class="typewriter" data-text="Voluntariado en jardinería, ornitología y monitor infantil."></p>
-        </div>
-            <div class="page-number">Page 2 de 2</div>
-        <div class="page page-right">
-            <p class="typewriter" data-text="Contacto: +34 607 03 45 49 luipy@ldeluipy.es yoelberjaga@gmail.com Barcelona, España"></p>
-            <p class="typewriter" data-text="Participación en Erasmus de prácticas (2 meses) en Cracovia, Polonia"></p>
-            <p class="typewriter" data-text="Habilidades en edición multimedia (vídeo, imagen, web) y administración de servidores"></p>
-            <p class="typewriter" data-text="Conocimientos en bases de datos SQL y NoSQL"></p>
-            <p><a href="https://luipy56.github.io/LdeLuipy/" target="_blank" style="position: absolute; bottom: 0; right: 0;">Índice de Proyectos</a></p>
-        </div>
+      <div class="page page-left"></div>
+      <div class="page-number">Page 1 de 2</div>
+      <div class="page page-right"></div>
     </div>
   </div>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const elements = document.querySelectorAll('.typewriter');
+    const pages = [
+      {
+        left: [
+          "Yoel Berjaga, estudiante de Desarrollo de Aplicaciones Web, con experiencia en Python, Java, PHP, C y JavaScript.",
+          "Actualmente cursando DAW y formado en Sistemas Microinformáticos y Redes.",
+          "Soporte técnico, mantenimiento y configuración de redes.",
+          "Idiomas: Castellano y Catalán nativos; Inglés intermedio-alto.",
+          "Voluntariado en jardinería, ornitología y monitor infantil."
+        ],
+        right: [
+          "Contacto: +34 607 03 45 49 luipy@ldeluipy.es yoelberjaga@gmail.com Barcelona, España",
+          "Participación en Erasmus de prácticas (2 meses) en Cracovia, Polonia",
+          "Habilidades en edición multimedia (vídeo, imagen, web) y administración de servidores",
+          "Conocimientos en bases de datos SQL y NoSQL",
+          '<a href="https://luipy56.github.io/LdeLuipy/" target="_blank">Índice de Proyectos</a>'
+        ]
+      },
+      {
+        left: [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+          "Laboris nisi ut aliquip ex ea commodo consequat.",
+          "Duis aute irure dolor in reprehenderit in voluptate velit esse."
+        ],
+        right: [
+          "Cillum dolore eu fugiat nulla pariatur.",
+          "Excepteur sint occaecat cupidatat non proident.",
+          "Sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "Etiam sit amet nisl purus in mollis nunc sed id.",
+          '<a href="#">Volver al índice</a>'
+        ]
+      }
+    ];
   
-      elements.forEach((el, index) => {
-        const text = el.getAttribute('data-text');
+    let currentPage = 0;
+  
+    function typeText(container, lines) {
+      container.innerHTML = "";
+      lines.forEach((text, idx) => {
+        const p = document.createElement("p");
+        p.innerHTML = ""; // inicial vacío
+        container.appendChild(p);
+  
+        if (text.includes("<a")) {
+          p.innerHTML = text; // sin efecto máquina de escribir para enlaces
+          return;
+        }
+  
         let i = 0;
-        const delay = 10 * index; // retrasa el inicio de cada párrafo ligeramente
+        const delay = 5 * idx;
         setTimeout(() => {
           const interval = setInterval(() => {
             if (i < text.length) {
-              el.textContent += text.charAt(i);
+              p.textContent += text.charAt(i);
               i++;
             } else {
               clearInterval(interval);
             }
-          }, 10); // velocidad de escritura (ms por carácter)
+          }, 10);
         }, delay * 100);
       });
+    }
+  
+    function renderPage(index) {
+      const leftContainer = document.querySelector(".page-left");
+      const rightContainer = document.querySelector(".page-right");
+  
+      const page = pages[index];
+      if (!page) return;
+  
+      typeText(leftContainer, page.left);
+      typeText(rightContainer, page.right);
+  
+      document.querySelector(".page-number").textContent = `Page ${index + 1} de ${pages.length}`;
+    }
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      renderPage(currentPage);
+  
+      document.querySelector(".left-button").addEventListener("click", () => {
+        if (currentPage > 0) {
+          currentPage--;
+          renderPage(currentPage);
+        }
+      });
+  
+      document.querySelector(".right-button").addEventListener("click", () => {
+        if (currentPage < pages.length - 1) {
+          currentPage++;
+          renderPage(currentPage);
+        }
+      });
     });
+  
 </script>
 </body>
 </html>
