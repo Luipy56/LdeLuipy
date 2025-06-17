@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Libro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: url('img/bg1.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Press Start 2P', monospace;
+      color: black;
+    }
+
+    .book-image {
+      width: calc(180px * 4.5);
+      height: auto;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      position: relative;
+    }
+
+    .book-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: calc(14px * 4.5);
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .page {
+      width: 44%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: hidden;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .page-left p {
+      font-size: calc(2px * 4.5);
+      margin: 0 0 calc(4px * 4.5) 0;
+      line-height: 1.4;
+      pointer-events: auto;
+    }
+
+    .page-right {
+      position: relative;
+      align-items: flex-end;
+    }
+
+    .page-number {
+      position: absolute;
+      top: calc(7px * 4.5);
+      right: calc(5%);
+      font-size: calc(2px * 4.5);
+      pointer-events: auto;
+      z-index: 10;
+    }
+
+    .page-right p {
+      font-size: calc(2px * 4.5);
+      margin: 0 0 calc(4px * 4.5) 0;
+      line-height: 1.4;
+      padding-left: calc(4px * 4.5);
+      pointer-events: auto;
+    }
+
+    .page-right a {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: calc(2px * 4.5);
+      pointer-events: auto;
+      text-decoration: underline;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="book-image-container" style="position: relative;">
+    <img src="img/DobleOpenedBook.png" alt="Libro abierto" class="book-image" />
+    <div class="book-overlay">
+    <div class="page page-left">
+        <p>Yoel Berjaga, estudiante de Desarrollo de Aplicaciones Web, con experiencia en Python, Java, PHP, C y JavaScript.</p>
+        <p>Actualmente cursando DAW y formado en Sistemas Microinformáticos y Redes.</p>
+        <p>Soporte técnico, mantenimiento y configuración de redes.</p>
+        <p>Idiomas: Castellano y Catalán nativos; Inglés intermedio-alto.</p>
+        <p>Voluntariado en jardinería, ornitología y monitor infantil.</p>
+    </div>
+        <div class="page-number">Page 2 de 2</div>
+    <div class="page page-right">
+        <p>Contacto: <br> +34 607 03 45 49 luipy@ldeluipy.es<br>yoelberjaga@gmail.com<br>Barcelona, España</p>
+        <p>Participación en Erasmus de prácticas (2 meses) en Cracovia, Polonia.</p>
+        <p>Habilidades en edición multimedia (vídeo, imagen, web) y administración de servidores.</p>
+        <p>Conocimientos en bases de datos SQL y NoSQL.</p>
+        <p><a href="https://luipy56.github.io/LdeLuipy/" target="_blank" style="position: absolute; bottom: 0; right: 0;">Índice de Proyectos</a></p>
+    </div>
+          
+    </div>
+  </div>
+</body>
+</html>
