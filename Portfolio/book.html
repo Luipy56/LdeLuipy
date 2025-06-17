@@ -64,7 +64,7 @@
 
     .page-right {
       position: relative;
-      align-items: flex-end;
+      align-items: flex-start;
     }
 
     .page-number {
@@ -99,23 +99,43 @@
   <div class="book-image-container" style="position: relative;">
     <img src="img/DobleOpenedBook.png" alt="Libro abierto" class="book-image" />
     <div class="book-overlay">
-    <div class="page page-left">
-        <p>Yoel Berjaga, estudiante de Desarrollo de Aplicaciones Web, con experiencia en Python, Java, PHP, C y JavaScript.</p>
-        <p>Actualmente cursando DAW y formado en Sistemas Microinformáticos y Redes.</p>
-        <p>Soporte técnico, mantenimiento y configuración de redes.</p>
-        <p>Idiomas: Castellano y Catalán nativos; Inglés intermedio-alto.</p>
-        <p>Voluntariado en jardinería, ornitología y monitor infantil.</p>
-    </div>
-        <div class="page-number">Page 2 de 2</div>
-    <div class="page page-right">
-        <p>Contacto: <br> +34 607 03 45 49 luipy@ldeluipy.es<br>yoelberjaga@gmail.com<br>Barcelona, España</p>
-        <p>Participación en Erasmus de prácticas (2 meses) en Cracovia, Polonia.</p>
-        <p>Habilidades en edición multimedia (vídeo, imagen, web) y administración de servidores.</p>
-        <p>Conocimientos en bases de datos SQL y NoSQL.</p>
-        <p><a href="https://luipy56.github.io/LdeLuipy/" target="_blank" style="position: absolute; bottom: 0; right: 0;">Índice de Proyectos</a></p>
-    </div>
-          
+        <div class="page page-left">
+            <p class="typewriter" data-text="Yoel Berjaga, estudiante de Desarrollo de Aplicaciones Web, con experiencia en Python, Java, PHP, C y JavaScript."></p>
+            <p class="typewriter" data-text="Actualmente cursando DAW y formado en Sistemas Microinformáticos y Redes."></p>
+            <p class="typewriter" data-text="Soporte técnico, mantenimiento y configuración de redes."></p>
+            <p class="typewriter" data-text="Idiomas: Castellano y Catalán nativos; Inglés intermedio-alto."></p>
+            <p class="typewriter" data-text="Voluntariado en jardinería, ornitología y monitor infantil."></p>
+        </div>
+            <div class="page-number">Page 2 de 2</div>
+        <div class="page page-right">
+            <p class="typewriter" data-text="Contacto: +34 607 03 45 49 luipy@ldeluipy.es yoelberjaga@gmail.com Barcelona, España"></p>
+            <p class="typewriter" data-text="Participación en Erasmus de prácticas (2 meses) en Cracovia, Polonia"></p>
+            <p class="typewriter" data-text="Habilidades en edición multimedia (vídeo, imagen, web) y administración de servidores"></p>
+            <p class="typewriter" data-text="Conocimientos en bases de datos SQL y NoSQL"></p>
+            <p><a href="https://luipy56.github.io/LdeLuipy/" target="_blank" style="position: absolute; bottom: 0; right: 0;">Índice de Proyectos</a></p>
+        </div>
     </div>
   </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.typewriter');
+  
+      elements.forEach((el, index) => {
+        const text = el.getAttribute('data-text');
+        let i = 0;
+        const delay = 10 * index; // retrasa el inicio de cada párrafo ligeramente
+        setTimeout(() => {
+          const interval = setInterval(() => {
+            if (i < text.length) {
+              el.textContent += text.charAt(i);
+              i++;
+            } else {
+              clearInterval(interval);
+            }
+          }, 10); // velocidad de escritura (ms por carácter)
+        }, delay * 100);
+      });
+    });
+</script>
 </body>
 </html>
