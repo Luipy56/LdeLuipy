@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería del Blocke</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    body {
+      background: url('img/bg1.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gallery-container {
+      position: relative;
+      width: calc(180px * 4.5);
+      height: auto;
+      max-width: 100vw;
+      image-rendering: pixelated;
+    }
+
+    .scroll-wrapper {
+      display: flex;
+      width: 300%; /* 3 bloques */
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .gallery-block {
+      width: calc(180px * 4.5);
+      flex-shrink: 0;
+      background: url('img/dummyGridGaleria.png') no-repeat center center;
+      background-size: contain;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .frame-container {
+      position: relative;
+      width: 600px;
+      max-width: 90%;
+    }
+
+    .frame-image {
+      width: 100%;
+      display: block;
+      image-rendering: pixelated;
+    }
+
+    .sign-title {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      image-rendering: pixelated;
+    }
+
+    .nav-button {
+      position: absolute;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    .up-button {
+      top: calc(-80px);
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    .left-button {
+      top: 50%;
+      left: calc(-140px);
+      transform: translateY(-50%);
+    }
+
+    .right-button {
+      top: 50%;
+      right: calc(-140px);
+      transform: translateY(-50%);
+    }
+
+    .button-img {
+      width: calc(32px * 2);
+      image-rendering: pixelated;
+    }
+
+    .up-button:hover .button-img {
+      content: url('widgets/upHoverNormalButton.png');
+    }
+
+    .left-button:hover .button-img {
+      content: url('widgets/leftHoverNormalButton.png');
+    }
+
+    .right-button:hover .button-img {
+      content: url('widgets/rightHoverNormalButton.png');
+    }
+
+  </style>
+</head>
+<body>
+  <div class="gallery-container">
+    <div class="scroll-wrapper" id="scrollWrapper">
+      <div class="gallery-block">
+        <div class="frame-container">
+          <img src="widgets/warpedSign.png" class="sign-title" alt="Título">
+          <img src="paints/proyectoNeonVOX.jpg" class="frame-image scale-down" alt="Frame 1">
+
+        </div>
+      </div>
+      <div class="gallery-block">
+        <div class="frame-container">
+          <img src="widgets/warpedSign.png" class="sign-title" alt="Título">
+          <img src="paints/nombre2.png" class="frame-image" alt="Frame 2">
+        </div>
+      </div>
+      <div class="gallery-block">
+        <div class="frame-container">
+          <img src="widgets/warpedSign.png" class="sign-title" alt="Título">
+          <img src="paints/nombre3.png" class="frame-image" alt="Frame 3">
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones posicionados como en el libro -->
+    <a href="index.html" class="nav-button up-button">
+      <img src="widgets/upNormalButton.png" class="button-img" alt="Volver">
+    </a>
+
+    <button class="nav-button left-button" id="prevBtn">
+      <img src="widgets/leftNormalButton.png" class="button-img" alt="Anterior">
+    </button>
+
+    <button class="nav-button right-button" id="nextBtn">
+      <img src="widgets/rightNormalButton.png" class="button-img" alt="Siguiente">
+    </button>
+  </div>
+
+  <script>
+    const scrollWrapper = document.getElementById("scrollWrapper");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let currentIndex = 0;
+    const totalBlocks = 3;
+
+    function updateScroll() {
+      scrollWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + totalBlocks) % totalBlocks;
+      updateScroll();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % totalBlocks;
+      updateScroll();
+    });
+  </script>
+</body>
+</html>
