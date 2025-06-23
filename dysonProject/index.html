@@ -11,6 +11,7 @@
             color: white;
             font-weight: bold;
             font-family: Arial, sans-serif;
+            line-height: 1.6; /* Aumento del interlineado */
         }
         header img {
             margin-top: 100px;
@@ -23,10 +24,18 @@
             display: flex;
             justify-content: center;
             margin: 20px 0;
+            padding: 0 15px; /* Añadido padding para mejorar visualización en pantallas pequeñas */
         }
         .text-container {
             width: 40%;
             text-align: justify;
+            font-size: 1.1rem; /* Texto un poco más grande para facilitar la lectura */
+        }
+        @media (max-width: 768px) {
+            .text-container {
+                width: 90%; /* Para dispositivos móviles que ocupe más ancho */
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -43,7 +52,7 @@
                 La historia sigue a Dyson, un genio excéntrico con la chispa de Rick, y Cooper, un joven común del presente que, gracias a una distorsión temporal provocada por un viaje espacial a velocidades relativistas, despierta en este futuro extraordinario tras solo seis meses en su nave. Juntos, se embarcan en aventuras que desafían el tiempo y el espacio, explorando lo desconocido en una odisea épica que cambiará para siempre la percepción de la humanidad sobre el universo.
             </p>
             <p>
-                La serie promete sumergir al espectador en conceptos complejos de ciencias como astronomía, física, química y biología, explicados de forma entretenida y accesible. Además, está en planes una película ambientada aún más adelante en el tiempo, donde el protagonista tendrá la misión de salvar el continuo espacio-tiempo, llevando la narrativa a nuevas dimensiones y desafíos explorando todos los niveles de Kardashev.
+                La serie promete sumergir al espectador en conceptos complejos de ciencias como astronomía, física, química y biología, explicados de forma entretenida y accesible. Además, está en planes una película, Infinity Dyson, ambientada aún más adelante en el tiempo, donde el protagonista tendrá la misión de salvar el continuo espacio-tiempo, llevando la narrativa a nuevas dimensiones y desafíos explorando todos los niveles de Kardashev.
             </p>
         </div>
     </main>
