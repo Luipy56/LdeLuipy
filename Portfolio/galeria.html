@@ -21,12 +21,13 @@
       align-items: center;
     }
 
-    .gallery-container {
+   .gallery-container {
       position: relative;
       width: calc(180px * 4.5);
       height: auto;
       max-width: 100vw;
       image-rendering: pixelated;
+      margin-top: 30px; /* <-- Ajusta este valor a tu gusto */
     }
 
     .scroll-wrapper {
@@ -36,35 +37,86 @@
     }
 
     .gallery-block {
+      position: relative;
       width: calc(180px * 4.5);
+      height: 600px; /* Altura fija para permitir espacio al wall */
       flex-shrink: 0;
-      background: url('img/dummyGridGaleria.png') no-repeat center center;
-      background-size: contain;
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
+      overflow: hidden;
+    }
+
+    .wall-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('img/wallQuartz.png');
+      background-repeat: repeat-x;
+      background-position: top left; /* Valor válido */
+      background-size: contain; /* Ajusta al alto del contenedor, asegurando proporción */
+      image-rendering: pixelated;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .frame-container {
       position: relative;
-      width: 600px;
+      top:-10px;
+      width: 550px; /* Paint reducido a la mitad */
       max-width: 90%;
+      z-index: 1;
     }
 
     .frame-image {
       width: 100%;
+      max-height: 350px; /* limita la altura máxima */
+      object-fit: contain; /* mantiene la proporción sin recortar */
       display: block;
       image-rendering: pixelated;
     }
 
     .sign-title {
       position: absolute;
-      top: -40px;
+      top: -70px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
+      width: 120px; /* o el tamaño que desees */
       image-rendering: pixelated;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* centrado vertical */
+      align-items: center;     /* centrado horizontal */
+      text-align: center;
+
+      height: 100px; /* altura fija para poder centrar verticalmente */
+    }
+
+    .sign-title img {
+      width: 100%;
+      display: block;
+      position: absolute; /* Para que la imagen quede de fondo */
+      top: 0;
+      left: 0;
+      height: 100%;
+      object-fit: contain;
+      z-index: 0;
+    }
+
+    .sign-text {
+      position: relative; /* relativo para estar sobre la imagen */
+      z-index: 1;
+      width: 80%;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: sans-serif;
+      pointer-events: none;
+      user-select: none;
+      margin: 0;
     }
 
     .nav-button {
@@ -77,7 +129,7 @@
     }
 
     .up-button {
-      top: calc(-80px);
+      top: calc(-60px);
       left: 50%;
       transform: translate(-50%, 0);
     }
@@ -110,31 +162,13 @@
     .right-button:hover .button-img {
       content: url('widgets/rightHoverNormalButton.png');
     }
-
   </style>
+
 </head>
 <body>
   <div class="gallery-container">
     <div class="scroll-wrapper" id="scrollWrapper">
-      <div class="gallery-block">
-        <div class="frame-container">
-          <img src="widgets/warpedSign.png" class="sign-title" alt="Título">
-          <img src="paints/proyectoNeonVOX.jpg" class="frame-image scale-down" alt="Frame 1">
-
-        </div>
-      </div>
-      <div class="gallery-block">
-        <div class="frame-container">
-          <img src="widgets/warpedSign.png" class="sign-title" alt="Título">
-          <img src="paints/nombre2.png" class="frame-image" alt="Frame 2">
-        </div>
-      </div>
-      <div class="gallery-block">
-        <div class="frame-container">
-          <img src="widgets/warpedSign.png" class="sign-title" alt="Título">
-          <img src="paints/nombre3.png" class="frame-image" alt="Frame 3">
-        </div>
-      </div>
+      <!-- Los bloques se generarán aquí con JavaScript -->
     </div>
 
     <!-- Botones posicionados como en el libro -->
@@ -152,15 +186,64 @@
   </div>
 
   <script>
+    // Array con los datos para cada bloque de la galería
+    const galleryData = [
+      {
+        paragraph: "Proyecto Neon en Voxel",
+        imageSrc: "paints/proyectoNeonVOX.jpg"
+      },
+      {
+        paragraph: "-----",
+        imageSrc: "paints/sillonArena.png"
+      },
+      {
+        paragraph: "-----",
+        imageSrc: "paints/name"
+      },
+      {
+        paragraph: "-----",
+        imageSrc: "paints/name"
+      }
+    ];
+
     const scrollWrapper = document.getElementById("scrollWrapper");
+
+    // Variable editable con la cantidad de bloques (basada en el array)
+    const totalBlocks = galleryData.length;
+
+    // Función para crear cada bloque HTML
+    function createGalleryBlock(data) {
+      const block = document.createElement("div");
+      block.className = "gallery-block";
+
+      block.innerHTML = `
+        <div class="wall-bg"></div>
+        <div class="frame-container">
+          <div class="sign-title">
+            <img src="widgets/warpedSign.png" alt="Título">
+            <p class="sign-text">${data.paragraph}</p>
+          </div>
+          <img src="${data.imageSrc}" class="frame-image" alt="Frame image">
+        </div>
+      `;
+      return block;
+    }
+
+    // Generar todos los bloques y añadirlos al scrollWrapper
+    galleryData.forEach(data => {
+      const block = createGalleryBlock(data);
+      scrollWrapper.appendChild(block);
+    });
+
+    // Funcionalidad del scroll y botones
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
 
     let currentIndex = 0;
-    const totalBlocks = 3;
 
     function updateScroll() {
-      scrollWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+      // Asumo que quieres mostrar 3 bloques a la vez, ajusta si es diferente
+      scrollWrapper.style.transform = `translateX(-${currentIndex * (100 / 3)}%)`;
     }
 
     prevBtn.addEventListener("click", () => {
@@ -172,6 +255,9 @@
       currentIndex = (currentIndex + 1) % totalBlocks;
       updateScroll();
     });
+
+    // Inicializar scroll
+    updateScroll();
   </script>
 </body>
 </html>

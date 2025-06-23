@@ -69,33 +69,29 @@
         margin: auto;
         margin-top: calc(0.7px * 3.409);
     }
-    .sprite.NoPixel{
-        image-rendering:auto;
-    }
-    
-    .cell a:hover .sprite {
-    transform: scale(1.2);
-    }
+    .sprite.NoPixel{image-rendering:auto;}
+    .cell a:hover .sprite {transform: scale(1.2);}
 
     .sprite-compass {background-image: url('sprites/compass.png');}
     .sprite-head {background-image: url('sprites/head.png');}
     .sprite-quil {background-image: url('sprites/quil.png');}
     .sprite-gitLogo {background-image: url('sprites/gitLogo.png');}
-    
-      
+    .sprite-cobweb {background-image: url('sprites/cobweb.png');}
+    .sprite-painting {background-image: url('sprites/painting.png');}
+
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="img/chestAlpha.png" alt="Imagen centrada" class="center-image">
+    <img src="img/chestAlpha.png" alt="Cofre" class="center-image">
     <!-- <img src="img/chestBlack.png" alt="Imagen centrada" class="center-image"> -->
 
     <div class="grid-overlay"></div>
     <script>
         const gridData = [
-            null, null, null, null, "sprite-compass", null, null, null, null,
-            null, { class: "sprite-head", noPixel: true , link: 'https://sites.google.com/view/luipyofficialweb/inicio'}, null, null, {link: 'galeria.html'}, null, null, { class: "sprite-quil", link: "book.html" }, null,
-            null, null, null, null, { class: "sprite-gitLogo", noPixel: true, link: "https://doc.ldeluipy.es" }, null, null, null, null
+            "sprite-cobweb", null, null, null, "sprite-compass", null, null, "sprite-cobweb", null,
+            null, { class: "sprite-head", noPixel: true , link: 'https://sites.google.com/view/luipyofficialweb/inicio'}, null, null, {class: "sprite-painting", link: 'galeria.html'}, "sprite-cobweb", null, { class: "sprite-quil", link: "book.html" }, null,
+            null, null, "sprite-cobweb", null, { class: "sprite-gitLogo", noPixel: true, link: "https://doc.ldeluipy.es" }, null, null, null, null
         ];
     </script>
     <script>
