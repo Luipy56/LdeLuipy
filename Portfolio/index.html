@@ -32,16 +32,40 @@
       image-rendering: pixelated;
       image-rendering: crisp-edges;
     }
+    :root {
+      --scale: 3.409;
+      --unit: 1px;
+      --cell-size: calc(18 * var(--scale) * var(--unit));
+      --cell-gap: calc(14 * var(--scale) * var(--unit));
+      --offset-top: calc(17 * var(--scale) * var(--unit));
+      --row-height: var(--cell-size);
+      --grid-columns: 9;
+    }
 
     .grid-overlay {
       position: absolute;
-      top: calc(17px * 3.409); /* Borde superior escalado */
-      left: calc(7px * 3.409); /* Borde izquierdo escalado */
+      left: calc(7 * var(--scale) * var(--unit));
       display: grid;
-      grid-template-columns: repeat(9, calc(18px * 3.409)); /* Cada celda + separación */
-      grid-template-rows: repeat(3, calc(18px * 3.409));
+      grid-template-columns: repeat(var(--grid-columns), var(--cell-size));
       pointer-events: none;
     }
+
+    .grid-overlay-top {
+      top: var(--offset-top);
+      grid-template-rows: repeat(3, var(--row-height));
+    }
+
+    .grid-overlay-bottom {
+      top: calc(var(--offset-top) + (3 * var(--row-height)) + var(--cell-gap));
+      grid-template-rows: repeat(3, var(--row-height));
+    }
+
+    .grid-overlay-hotbar {
+      top: calc(var(--offset-top) + (3 * var(--row-height)) + var(--cell-gap) + (3 * var(--row-height)) + (4 * var(--scale) * var(--unit)));
+      grid-template-columns: repeat(var(--grid-columns), var(--cell-size));
+      grid-template-rows: var(--row-height);
+    }
+
 
     .cell {
       width: calc(18px * 3.409);
@@ -79,66 +103,94 @@
     <img src="img/chestAlpha.png" alt="Cofre" class="center-image">
     <!-- <img src="img/chestBlack.png" alt="Imagen centrada" class="center-image"> -->
 
-    <div class="grid-overlay"></div>
+    <div class="grid-overlay grid-overlay-top"></div>
+    <div class="grid-overlay grid-overlay-bottom"></div>
+    <div class="grid-overlay grid-overlay-hotbar"></div>
+
     <script>
-        const gridData = [
-            {class: "sprite-instagram", noPixel: true, link: "https://www.instagram.com/luipy.yt/"}, null, {class:"sprite-DdeDyson", noPixel: true, link:"https://doc.ldeluipy.es/dysonProject/"}, null, "sprite-compass", null, null, "sprite-cobweb", {class: "sprite-discord",  noPixel: true, link:"https://discord.com/invite/6ExMmZM6rK"},
-            null, { class: "sprite-head", noPixel: true , link: 'https://sites.google.com/view/luipyofficialweb/inicio'}, null, null, {class: "sprite-painting", link: 'galeria.html'}, "sprite-cobweb", null, { class: "sprite-quil", link: "book.html" }, null,
-            {class: "sprite-planetMinecraft",link:"https://www.planetminecraft.com/member/luipy/"}, null, "sprite-cobweb", null, { class: "sprite-gitLogo", noPixel: true, link: "https://doc.ldeluipy.es" }, null, null, null, {class: "sprite-youtube", noPixel: true, link: "https://www.youtube.com/channel/UC5VnQnxseYH5folERXLqxiA"}
-        ];
-        
+      const gridDataTop = [
+        {class: "sprite-instagram", noPixel: true, link: "https://www.instagram.com/luipy.yt/", title: "Instagram"}, null, {class:"sprite-DdeDyson", noPixel: true, link:"https://doc.ldeluipy.es/dysonProject/", title:"Dyson Project"}, null, "sprite-compass", null, null, null, {class: "sprite-discord",  noPixel: true, link:"https://discord.com/invite/6ExMmZM6rK", title:"Canal de Discord"},
+        null, { class: "sprite-head", noPixel: true , link: 'https://sites.google.com/view/luipyofficialweb/inicio', title:"Google Site"}, null, null, {class: "sprite-painting", link: 'galeria.html', title:"Galería de Proyectos"}, null, null, { class: "sprite-quil", link: "book.html" , title:"Currículum"}, null,
+        {class: "sprite-planetMinecraft",link:"https://www.planetminecraft.com/member/luipy/", title:"Planet Minecraft"}, null, null, null, { class: "sprite-gitLogo", noPixel: true, link: "https://doc.ldeluipy.es" , title:"Indice GitHub"}, null, null, null, {class: "sprite-youtube", noPixel: true, link: "https://www.youtube.com/channel/UC5VnQnxseYH5folERXLqxiA", title:"Youtube"}
+      ];
+
+      const gridDataBottom = [
+        null, null, "sprite-cobweb", null, null, null, null, "sprite-cobweb", null,
+        null, null, {class: "sprite-redstone", link: "#", title:"Lógica"}, null, "sprite-eye", null, null, {class: "sprite-limeCubeC", noPixel: true, link: "https://ldeluipy.es/ldeluipy/modelos3D/multipleModels/", title:"Proyecto Modelos 3D"}, null,
+        "sprite-cobweb", null, null, "sprite-cobweb", null, null, null, null, {class: "sprite-enderpearl", link: "contact.html", title:"Contactos"}
+      ];
+
+      const gridDataHotbar = [
+        null, null, null, "sprite-goldenApple", null, null, null, null, null,
+      ];
     </script>
+
     <script>
-        const spriteSet = new Set();
+      function procesarSprites(gridData) {
+        const set = new Set();
 
         gridData.forEach(cell => {
           if (typeof cell === "string" && cell.startsWith("sprite-")) {
-            spriteSet.add(cell.replace("sprite-", ""));
+            set.add(cell.replace("sprite-", ""));
           } else if (cell && typeof cell.class === "string" && cell.class.startsWith("sprite-")) {
-            spriteSet.add(cell.class.replace("sprite-", ""));
+            set.add(cell.class.replace("sprite-", ""));
           }
         });
 
-        // Genera las reglas CSS dinámicamente
-        const style = document.createElement("style");
-        style.type = "text/css";
+        return set;
+      }
 
-        spriteSet.forEach(name => {
-          style.textContent += `.sprite-${name} {background-image: url('sprites/${name}.png');}\n`;
-        });
+      const spriteSetTop = procesarSprites(gridDataTop);
+      const spriteSetBottom = procesarSprites(gridDataBottom);
+      const spriteSetHotbar = procesarSprites(gridDataHotbar);
 
-        document.head.appendChild(style);
+      const style = document.createElement("style");
+      style.type = "text/css";
 
-        const gridOverlay = document.querySelector(".grid-overlay");
-      
+      const spriteSetTotal = new Set([...spriteSetTop, ...spriteSetBottom, ...spriteSetHotbar]);
+
+      spriteSetTotal.forEach(name => {
+        style.textContent += `.sprite-${name} {background-image: url('sprites/${name}.png');}\n`;
+      });
+
+      document.head.appendChild(style);
+
+      function generarGrid(selector, gridData) {
+        const grid = document.querySelector(selector);
+
         gridData.forEach(cell => {
           const cellDiv = document.createElement("div");
           cellDiv.classList.add("cell");
-      
+
           const a = document.createElement("a");
           a.href = "#";
-      
+
           if (cell) {
             const sprite = document.createElement("div");
             sprite.classList.add("sprite");
-      
+
             if (typeof cell === "string") {
               sprite.classList.add(cell);
             } else {
               sprite.classList.add(cell.class);
               if (cell.noPixel) sprite.classList.add("NoPixel");
               if (cell.link) a.href = cell.link;
+              if (cell.title) a.title = cell.title;
               if (cell.link && cell.link.startsWith("http")) a.target = "_blank";
             }
-      
+
             a.appendChild(sprite);
           }
-      
+
           cellDiv.appendChild(a);
-          gridOverlay.appendChild(cellDiv);
+          grid.appendChild(cellDiv);
         });
+      }
+
+      generarGrid(".grid-overlay-top", gridDataTop);
+      generarGrid(".grid-overlay-bottom", gridDataBottom);
+      generarGrid(".grid-overlay-hotbar", gridDataHotbar);
     </script>
-      
   </div>
 </body>
 </html>
