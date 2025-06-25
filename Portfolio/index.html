@@ -96,9 +96,30 @@
     .sprite.NoPixel{image-rendering:auto;}
     .cell a:hover .sprite {transform: scale(1.2);}
 
+    .hunger-bar {
+      position: fixed;
+      top: 24px;     
+      right: 24px;   
+      display: flex;
+      gap: 2px;
+      z-index: 1000;
+      pointer-events: none;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+    }
+    
+    .hunger-bar img {
+      width: 40px;
+      height: 40px;
+      image-rendering: pixelated;
+    }
+    
   </style>
+  
 </head>
 <body>
+    <div id="hungerBar" class="hunger-bar"></div>
+    <script src="hungerBar.js"></script>
+  
   <div class="container">
     <img src="img/chestAlpha.png" alt="Cofre" class="center-image">
     <!-- <img src="img/chestBlack.png" alt="Imagen centrada" class="center-image"> -->
@@ -117,7 +138,7 @@
       const gridDataBottom = [
         null, null, "sprite-cobweb", null, null, null, null, "sprite-cobweb", null,
         null, null, {class: "sprite-redstone", link: "#", title:"Lógica"}, null, "sprite-eye", null, null, {class: "sprite-limeCubeC", noPixel: true, link: "https://ldeluipy.es/ldeluipy/modelos3D/multipleModels/", title:"Proyecto Modelos 3D"}, null,
-        "sprite-cobweb", null, null, "sprite-cobweb", null, null, null, null, {class: "sprite-enderpearl", link: "contact.html", title:"Contactos"}
+        "sprite-cobweb", null, null, "sprite-cobweb", null, null, null, null, {class: "sprite-enderpearl", link: "#", title:"Contactos"}
       ];
 
       const gridDataHotbar = [
@@ -189,6 +210,13 @@
       generarGrid(".grid-overlay-bottom", gridDataBottom);
       generarGrid(".grid-overlay-hotbar", gridDataHotbar);
     </script>
+    <script>
+      const notch = document.querySelector(".sprite-goldenApple");
+      notch.addEventListener("click", function(){
+          clickedNotch();
+      });
+    </script>
   </div>
+<script src="privacyBanner.js"></script>
 </body>
 </html>
