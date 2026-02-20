@@ -7,101 +7,112 @@
     <style>
         :root {
             --verde-lima: #00ffa6;
-            --verde-lima-hover: #85FFD4;
+            --verde-lima-hover: #5cffb8;
             --negro: #121212;
             --gris-oscuro: #1e1e1e;
+            --gris-borde: #2a2a2a;
             --blanco: #f0f0f0;
         }
 
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--negro);
             color: var(--blanco);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
+            padding: 24px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
             background-color: var(--gris-oscuro);
-            padding: 40px 30px;
-            border-radius: 12px;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: 0 0 20px rgba(191, 255, 0, 0.1);
+            padding: 36px 32px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 1px rgba(0, 255, 166, 0.2);
+            border: 1px solid var(--gris-borde);
         }
 
         header {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--verde-lima);
-            padding-bottom: 10px;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--gris-borde);
         }
 
         .logo {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             image-rendering: pixelated;
-            margin-right: 12px;
+            margin-left: 14px;
         }
 
         h1 {
-            font-size: 1.8em;
+            font-size: 1.75rem;
             color: var(--verde-lima);
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px 20px;
+            list-style: none;
+            padding: 0;
             margin: 0;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
+        .links-grid li {
+            margin: 0;
         }
 
-        li {
-            margin: 12px 0;
-        }
-
-        a {
+        .links-grid a {
+            display: block;
             text-decoration: none;
             color: var(--verde-lima);
             font-weight: 500;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            display: inline-block;
-            position: relative;
+            font-size: 0.95rem;
+            padding: 10px 14px;
+            border-radius: 8px;
+            transition: color 0.2s ease, background 0.2s ease;
+            border: 1px solid transparent;
         }
 
-        a::after {
-            content: '';
-            display: block;
-            width: 0%;
-            height: 2px;
-            background: var(--verde-lima);
-            transition: width 0.3s;
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-        }
-
-        a:hover {
+        .links-grid a:hover {
             color: var(--verde-lima-hover);
-        }
-
-        a:hover::after {
-            width: 100%;
+            background: rgba(0, 255, 166, 0.08);
+            border-color: rgba(0, 255, 166, 0.2);
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 24px 20px;
+            }
+
             h1 {
-                font-size: 1.4em;
+                font-size: 1.35rem;
             }
 
             .logo {
-                width: 24px;
-                height: 24px;
+                width: 28px;
+                height: 28px;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
             }
         }
     </style>
@@ -109,24 +120,24 @@
 <body>
     <div class="container">
         <header>
-            <img src="Ojos.png" alt="Logo" class="logo">
             <h1>Índice de Proyectos</h1>
+            <img src="Ojos.png" alt="Logo" class="logo">
         </header>
-        <ul>
-            <li><a target = "_blank" href="DocProject/">DocProject</a></li>
-            <li><a target = "_blank" href="Portfolio/">Portfolio MC</a></li>
-            <li><a target = "_blank" href="https://ldeluipy.es/ldeluipy/ProjectMC-main/">Mc Status</a></li>
-            <li><a target = "_blank" href="dysonProject/">Dyson Project</a></li>
-            <li><a target = "_blank" href="Site/">Site</a></li>
-            <li><a target = "_blank" href="https://sites.google.com/view/luipyofficialweb/inicio">Site Google</a></li>
-            <li><a target = "_blank" href="Sample/">Tkinter Projects</a></li>
-            <li><a target = "_blank" href="GreenRealms/">Green Realms</a></li>
-            <li><a target = "_blank" href="CalculadoraSOST/">Calculadora Proyecto SOST</a></li>
-            <li><a target = "_blank" href="presentacionlujo/">Presentación Proyecto Final CM</a></li>
-<!--             <li><a href="Checkin/">Ejemplo Login</a></li> -->
-            <li><a target = "_blank" href="lujohotelcopy/">lujohotelcopy</a></li>
-            <li><a target = "_blank" href="https://www.youtube.com/channel/UC5VnQnxseYH5folERXLqxiA">YouTube</a></li>
-            <li><a target = "_blank" href="https://discord.com/invite/6ExMmZM6rK">Discord</a></li>
+        <ul class="links-grid">
+            <li><a target="_blank" href="DocProject/">DocProject</a></li>
+            <li><a target="_blank" href="Portfolio/">Portfolio MC</a></li>
+            <li><a target="_blank" href="https://ldeluipy.es/ldeluipy/ProjectMC-main/">Mc Status</a></li>
+            <li><a target="_blank" href="dysonProject/">Dyson Project</a></li>
+            <li><a target="_blank" href="Site/">Site</a></li>
+            <li><a target="_blank" href="https://sites.google.com/view/luipyofficialweb/inicio">Site Google</a></li>
+            <li><a target="_blank" href="Sample/">Tkinter Projects</a></li>
+            <li><a target="_blank" href="GreenRealms/">Green Realms</a></li>
+            <li><a target="_blank" href="http://vmg.ldeluipy.es">Vall Minigames</a></li>
+            <li><a target="_blank" href="CalculadoraSOST/">Calculadora Proyecto SOST</a></li>
+            <li><a target="_blank" href="presentacionlujo/">Presentación Proyecto Final CM</a></li>
+            <li><a target="_blank" href="lujohotelcopy/">lujohotelcopy</a></li>
+            <li><a target="_blank" href="https://www.youtube.com/channel/UC5VnQnxseYH5folERXLqxiA">YouTube</a></li>
+            <li><a target="_blank" href="https://discord.com/invite/6ExMmZM6rK">Discord</a></li>
         </ul>
     </div>
 </body>
