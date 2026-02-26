@@ -1,0 +1,197 @@
+/*
+ * DocProject - mcbot: look amigable y mejor UX
+ * Sobrescribe estilos de Hyperspace solo para la página del tutorial del bot.
+ */
+
+/* Paleta más cálida y acogedora */
+body {
+	background: #1a1f2e;
+	background-image: linear-gradient(160deg, #1a1f2e 0%, #252b3b 40%, #1e2433 100%);
+	color: rgba(255, 255, 255, 0.75);
+}
+
+/* Sidebar más legible y suave */
+#sidebar {
+	background: linear-gradient(180deg, #1e2433 0%, #252b3b 100%);
+	box-shadow: 4px 0 24px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar nav a {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+#sidebar nav a:hover {
+	color: #7dd3b0;
+}
+
+#sidebar nav a.active,
+#sidebar nav a:focus {
+	color: #7dd3b0;
+}
+
+#sidebar nav a:after {
+	background: linear-gradient(to right, #2d9d78, #7dd3b0);
+	border-radius: 2px;
+}
+
+/* Intro: bienvenida más clara */
+#intro {
+	background-image: linear-gradient(135deg, rgba(45, 157, 120, 0.08) 0%, transparent 50%),
+		url('images/intro.svg');
+}
+
+#intro .inner h1 {
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#intro .inner p {
+	color: rgba(255, 255, 255, 0.85);
+	line-height: 1.7;
+}
+
+/* Botón principal más amigable */
+#intro .button.scrolly {
+	background: linear-gradient(135deg, #2d9d78, #3ab88a);
+	border: none;
+	border-radius: 2em;
+	box-shadow: 0 4px 16px rgba(45, 157, 120, 0.35);
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	padding: 0.9em 1.8em;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#intro .button.scrolly:hover {
+	background: linear-gradient(135deg, #3ab88a, #4ac99a);
+	box-shadow: 0 6px 24px rgba(45, 157, 120, 0.45);
+	transform: translateY(-2px);
+}
+
+/* Sección de contenido: mejor contraste y lectura */
+#wrapper .wrapper.style2 {
+	background: rgba(30, 36, 51, 0.6);
+}
+
+/* Usar el ancho disponible: crece con el viewport al hacer zoom out, anclado a la izquierda */
+#wrapper .wrapper > .inner {
+	width: 100%;
+	max-width: min(90rem, 96vw);
+	margin-left: 0;
+	margin-right: auto;
+	box-sizing: border-box;
+	font-size: 80%;
+	text-align: left;
+}
+
+#wrapper h1 {
+	color: #fff;
+	font-size: 2em;
+	margin-top: 1.2em;
+	padding-bottom: 0.35em;
+	border-bottom: 2px solid rgba(125, 211, 176, 0.3);
+}
+
+#wrapper h2 {
+	color: #b8e6d5;
+	font-size: 1.5em;
+	margin-top: 1.8em;
+}
+
+#wrapper h3 {
+	color: rgba(255, 255, 255, 0.95);
+	font-size: 1.15em;
+	margin-top: 1.4em;
+}
+
+#wrapper p {
+	color: rgba(255, 255, 255, 0.8);
+	line-height: 1.75;
+}
+
+/* Enlaces más visibles y amigables */
+.wlink,
+#wrapper a.wlink {
+	color: #7dd3b0;
+	text-decoration: none;
+	border-bottom: 1px dotted rgba(125, 211, 176, 0.6);
+	transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.wlink:hover,
+#wrapper a.wlink:hover {
+	color: #a8ecd4;
+	border-bottom-color: #a8ecd4;
+}
+
+/* Listas más claras */
+.ulbold > li {
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.9);
+	margin-bottom: 0.5em;
+}
+
+/* Bloques de código: contenedor más suave */
+#wrapper pre {
+	background: #0f1219;
+	border: 1px solid rgba(125, 211, 176, 0.15);
+	border-radius: 10px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+	padding: 1.25em 1.5em;
+	margin: 1.5em 0;
+	overflow-x: auto;
+}
+
+#wrapper pre code {
+	font-size: 0.9em;
+	line-height: 1.5;
+}
+
+/* Imágenes del tutorial */
+.img1 {
+	max-width: 100%;
+	border: 3px solid rgba(45, 157, 120, 0.5);
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+	margin: 1em 0;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.img1:hover {
+	border-color: rgba(125, 211, 176, 0.6);
+	box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Cita / feedback */
+p[style*="italic"] {
+	background: rgba(45, 157, 120, 0.08);
+	border-left: 4px solid #2d9d78;
+	border-radius: 0 8px 8px 0;
+	padding: 1em 1.2em;
+	margin: 1.2em 0;
+}
+
+/* Footer más coherente con el tema */
+#footer {
+	background: linear-gradient(180deg, #151a26 0%, #1a1f2e 100%);
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#footer .menu a {
+	color: rgba(255, 255, 255, 0.6);
+	text-decoration: none;
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.25);
+}
+
+#footer .menu a:hover {
+	color: #7dd3b0;
+	border-bottom-color: #7dd3b0;
+}
+
+/* Mejor espaciado en secciones largas */
+#wrapper .inner > h2 + p,
+#wrapper .inner > h3 + p {
+	margin-top: 0.5em;
+}

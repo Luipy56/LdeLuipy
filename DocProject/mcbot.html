@@ -4,12 +4,13 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="es">
 	<head>
-		<title>Docu Luipy</title>
+		<title>Docu Luipy – Bot de Minecraft con Mineflayer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/mcbot.css" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -38,7 +39,7 @@
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
 							<h1>Minecraft Bot con "Mineflayer"</h1>
-							<p>Quiéres aprender a programar tu propio bot y que sea capaz de minar o atacar automáticamente? <br>
+							<p>¿Quieres aprender a programar tu propio bot y que sea capaz de minar o atacar automáticamente? <br>
 							Con este tutorial aprenderás a crear y configurar tu propio bot para servidores de Minecraft que funcione incluso en vanilla sin tener que usar plugins.<br/></p>
 							<ul class="actions">
 								<li><a href="#one" class="button scrolly">Vamos</a></li>
@@ -63,7 +64,7 @@
 							El server deberá estar entre la 1.8.8 y la 1.20.4 ya que la librería acepta actualmente sólo los protocolos de estas versiones. Pero no te preocupes, la librería se va actualizando permitiendo nuevas versiones! Puedes consultar la disponibilidad de los protocolos actualmente en <a class="wlink" href="https://github.com/PrismarineJS/mineflayer">PrismarineJS</a>
 							<li>Un cliente de Minecraft para confirmar su correcto funcionamiento</li>
 							<li>Nociones de programación</li>
-							No es obligatorio, pero ayudará en el proceso de configuración y a que puedas implementas más funciones.
+							No es obligatorio, pero ayudará en el proceso de configuración y a que puedas implementar más funciones.
 							<li>Conexión a internet</li>
 						</ul>
 						<p>Si no sabes cómo crear tu propio servidor de Minecraft, te recomiendo ver este otro tutorial: <a class="wlink" href=""><i>/To Be Continued/</i></a></p>
@@ -94,13 +95,13 @@ npm -v
 						<h3>Crear nuestro directorio donde empezar a trabajar en el bot</h3>
 						<p>En Ubuntu, crea y ve hacia el directorio donde desees trabajar, por ejemplo:</p>
 						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
-# La birgurilla "~" apunta al home de tu usario ej. "/home/Luipy"
+# La virgulilla "~" apunta al home de tu usario ej. "/home/Luipy"
 mkdir ~/mcBot
 cd ~/mcBot
 						</code></pre>
-						<p>En caso de estar en Windows, crea la carpeta como lo harías siempre, apartir de aquí los pasos tanto en Ubuntu como en Windows son iguales.</p>
+						<p>En caso de estar en Windows, crea la carpeta como lo harías siempre, a partir de aquí los pasos tanto en Ubuntu como en Windows son iguales.</p>
 						<h3>Instalación de mineflayer</h3>
-						<p>Antes de instalar mineflayer, tenemos que iniciar un proyecto de Node.js para que cree nuestros archivos de configuración. Para ello, desde la terminal y asegurándote estar en el directori/carpeta correcta, ejecuta el siguiente comando:</p>
+						<p>Antes de instalar mineflayer, tenemos que iniciar un proyecto de Node.js para que cree nuestros archivos de configuración. Para ello, desde la terminal y asegurándote de estar en el directorio o carpeta correcta, ejecuta el siguiente comando:</p>
 						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
 npm init -y
 						</code></pre>
@@ -144,8 +145,8 @@ const bot = mineflayer.createBot({
     username: 'NombreDelBot',
 });						</code></pre>
 						<p>Asegúrate de cambiar la <b>IPDelServidor </b> por la IP de tu servidor, comilla ' ' incluida, junto al puerto del servidor y el nombre del bot. Si el bot y el servidor están en el mismo host, puedes utilizar <b>'localhost'</b> en su lugar.</p>
-						<p>Cómo saber qué puerto utiliza mi servidor? <br>Utilices un host como Aternos o tu propia máquina, puedes comprobar el puerto que está utilizando el servidor mirando en el archivo <b>"server.propierties"</b>, donde saldrá especificado en la entrada: <b>"server-port=NºDelPuerto"</b>, supongamos que es:</p>
-<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//server.propierties
+						<p>Cómo saber qué puerto utiliza mi servidor? <br>Si utilizas un host como Aternos o tu propia máquina, puedes comprobar el puerto que está utilizando el servidor mirando en el archivo <b>"server.properties"</b>, donde saldrá especificado en la entrada: <b>"server-port=NºDelPuerto"</b>, supongamos que es:</p>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//server.properties
 server-port=25565
 </code></pre>
 						<p>25565 será el puerto que utilizaremos en la configuración del bot. <br> Como ejemplo:</p>
@@ -159,15 +160,15 @@ const bot = mineflayer.createBot({
 });
 </code></pre>
 						<p>Ten en cuenta que NO todos los servidores permiten que bots como este entren, por lo que te recomiendo NO intentar conectarlo a un servidor público cualquiera.</p>
-						<p>Para lanzar el bot, deberémos usar el siguiente comando</p>
+						<p>Para lanzar el bot, deberemos usar el siguiente comando</p>
 						<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">
 node bot.js
 						</code></pre>
 						<p>En caso de que npm o node no funcionen, reinicia la shell o sigue los pasos que se te han indicado en la terminal al instalarlos.</p>
-						<p>Si todo lo has hecho correctamente, el bot se unirá automáticamente en al servidor</p>
+						<p>Si todo lo has hecho correctamente, el bot se unirá automáticamente al servidor</p>
 						<img class="img1" src="images/jarvisPortrait.png" alt="Imagen del bot in-game">
-						<p>Es importante destacar que el servidor debe de ser NoPreomium, es decir, que en la configuración del servidor especifique lo siguiente:</p>
-<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">//server.propierties
+						<p>Es importante destacar que el servidor debe de ser NoPremium, es decir, que en la configuración del servidor especifique lo siguiente:</p>
+<pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-bash">//server.properties
 online-mode=false</code></pre>
 						<span id="four"></span>
 						<p>Esto debe de ser así ya que de lo contrario, el servidor intentará validar la sesión del player resultando en un error de validación.</p>
@@ -217,10 +218,10 @@ bot.on('chat', (username, message) => {
 		//el nombre del jugador que le ha llamado
 	}
 });</code></pre>
-						<p style="font-style: italic;">Consideras que los comentarios, es decir, la explicación del código, son difícilis de leer de esta manera? Crees que sería mejor dividir el código en trozos y explicarlo en un párrafo normal? Dame tu feedback por discord! <a class="wlink" href="https://discord.com/invite/6ExMmZM6rK"> Enlace a Discord</a></p>
+						<p style="font-style: italic;">Consideras que los comentarios, es decir, la explicación del código, son difíciles de leer de esta manera? Crees que sería mejor dividir el código en trozos y explicarlo en un párrafo normal? Dame tu feedback por discord! <a class="wlink" href="https://discord.com/invite/6ExMmZM6rK"> Enlace a Discord</a></p>
 						<p>Gracias a esto, el bot nos entenderá cuando digamos <b>"hola jarvis"</b> por el chat.</p>
 						<img class="img1" src="images/jarvisHola.png" alt="Imagen del bot diciendo Hola por el chat">
-						<p>Como en nuestro <b>"IF"</b> estamos utilizando la funcion <b>"includes"</b>, no hace falta que digamos específicamente <b>"hola jarvis"</b>, podríamos decir <b>"Anda, Hola Jarvis, qué tal?"</b> y seguiría funcionando correctamente.</p>
+						<p>Como en nuestro <b>"IF"</b> estamos utilizando la función <b>"includes"</b>, no hace falta que digamos específicamente <b>"hola jarvis"</b>, podríamos decir <b>"Anda, Hola Jarvis, qué tal?"</b> y seguiría funcionando correctamente.</p>
 						<p>A raíz de esto, podríamos hacer infinidad de cosas y activarlas simplemente con decírselo por el chat, como si fuera un jugador más en el servidor.<br>Aquí te dejo otro ejemplo donde con un poco más de lógica, Jarvis nos pondrá en el modo de juego que queramos.</p>
 <pre style="margin-bottom: 30px; margin-top: 30px;"><code class="language-javascript">//Dentro de la función de lectura del chat
 
@@ -301,7 +302,7 @@ if (message.includes('jarvis haz que sea de')) {
 		//el bot dirá que no lo ha entendido.
 		bot.chat(`Lo siento ${username}, no entiendo qué quieres decir con "${time}".`);
 		return;
-		//Gracis al return, haremos que la función pare aquí y no ejecute nada más
+		//Gracias al return, haremos que la función pare aquí y no ejecute nada más
 	}
 	//Por último, si todo ha salido bien, el bot confirmará el cambio de hora
 	bot.chat(`Por supuesto ${username}.`);
@@ -477,7 +478,7 @@ bot.on('chat', (username, message) => {
 			<footer id="footer" class="wrapper style1-alt" >
 				<div class="inner">
 					<ul class="menu" style="color: white;">
-						<li>&copy; Untitled. All rights reserved.</li><li>Plantilla creada por: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li><li><a href="site.ldeluipy.es" target="_blank">LdeLuipy®</a></li>
+						<li>&copy; Docu Luipy. Reservados todos los derechos.</li><li>Plantilla: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></li><li><a href="https://site.ldeluipy.es" target="_blank" rel="noopener">LdeLuipy®</a></li>
 					</ul>
 				</div>
 			</footer>
